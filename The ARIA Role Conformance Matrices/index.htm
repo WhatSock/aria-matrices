@@ -1004,6 +1004,8 @@ aria-level
 Heading is a heading for a section of the page.
 
 The aria-level attribute must be set on the role="heading" element to preserve an orderly document structure.
+
+(It should be noted at present, the spec does not list aria-level as a required attribute, but this should always be done as a standard practice.)
 </pre>
 </td>
 </tr>
@@ -2631,6 +2633,8 @@ Progressbar is an element that displays the progress status for tasks that take 
 Elements with the role Progressbar have an implicit aria-readonly value of "true".
 
 An element that includes role="progressbar" must also include the aria-valuemin, aria-valuemax, and aria-valuenow attributes.
+
+(It should be noted at present, the spec does not list aria-valuemin, aria-valuemax, nor aria-valuenow as required attributes, but the widget will not be accessible to Assistive Technologies without them.)
 
 The aria-valuenow attribute must be programmatically updated with a numerical value equal to or between the values of aria-valuemin and aria-valuemax.
 
