@@ -146,9 +146,11 @@ aria-label
 <pre>
 Application is a region declared as a web application, as opposed to a web Document.
 
-Use of the Application role will forcibly change the browse modality for screen readers such as JAWS and NVDA, so that static text that is not explicitly associated with an active element in the tab order will not generally be perceivable by the non-sighted screen reader user. (Only focusable active elements are perceivable.)
+Use of the Application role informs assistive technologies that keystrokes should be passed through to the control that currently has focus.
 
-The value of the Application role, is that it will force Assistive Technologies such as screen readers to pass all keystrokes through to the element that has focus. This is sometimes helpful when building composite widgets that have no specific role mapping.
+It's important to note that use of the Application role will forcibly change the browse modality for screen readers such as JAWS and NVDA, so that static text that is not explicitly associated with an active element in the tab order will not generally be perceivable by the non-sighted screen reader user. (Only focusable active elements are perceivable.) Moreover, NVDA will remove an Application region from the standard Virtual Buffer when navigating in Browse Mode, so that its content can only be detected and navigable after focus moves into that region. (All of these behaviors are interpretations of the ARIA spec by these AT venders, and are not specifically documented within the ARIA spec.)
+
+The Application role is valuable when building composite widgets that have no specific role mapping, where focus must be managed by the widget and not the assistive technology in order to ensure accessibility.
 
 Caution should always be used when implementing the Application role.
 
