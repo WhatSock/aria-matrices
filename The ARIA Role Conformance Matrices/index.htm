@@ -2581,7 +2581,19 @@ progressbar
 </a>
 </td>
 <td title="Required Attributes" class="cell"><!-- Required Attributes -->
+</td>
+<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
 <ul>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">
+aria-labelledby
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">
+aria-label
+</a>
+</li>
 <li>
 <a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-valuemin">
 aria-valuemin
@@ -2595,20 +2607,6 @@ aria-valuemax
 <li>
 <a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-valuenow">
 aria-valuenow
-</a>
-</li>
-</ul>
-</td>
-<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
-<ul>
-<li>
-<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">
-aria-labelledby
-</a>
-</li>
-<li>
-<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">
-aria-label
 </a>
 </li>
 <li>
@@ -2632,9 +2630,7 @@ Progressbar is an element that displays the progress status for tasks that take 
 
 Elements with the role Progressbar have an implicit aria-readonly value of "true".
 
-An element that includes role="progressbar" must also include the aria-valuemin, aria-valuemax, and aria-valuenow attributes.
-
-(It should be noted at present, the spec does not list aria-valuemin, aria-valuemax, nor aria-valuenow as required attributes, but the widget will not be accessible to Assistive Technologies without them.)
+An element that includes role="progressbar" should also include the aria-valuemin, aria-valuemax, and aria-valuenow attributes when these values are known as part of the animation process.
 
 The aria-valuenow attribute must be programmatically updated with a numerical value equal to or between the values of aria-valuemin and aria-valuemax.
 
