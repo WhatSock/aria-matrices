@@ -2636,7 +2636,7 @@ An element that includes role="progressbar" should also include the aria-valuemi
 
 The aria-valuenow attribute must be programmatically updated with a numerical value equal to or between the values of aria-valuemin and aria-valuemax.
 
-The aria-valuetext attribute can be used to convey a custom textual string to Assistive Technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Progressbar changes.
+The aria-valuetext attribute can be used to convey a custom textual string to assistive technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Progressbar changes.
 
 A container element that includes role="progressbar" does not need to be focusable, nor treated as an interactive widget.
 
@@ -2872,7 +2872,7 @@ An element that includes role="scrollbar" must also include the aria-valuemin, a
 
 The aria-valuenow attribute must be programmatically updated with a numerical value equal to or between the values of aria-valuemin and aria-valuemax.
 
-The aria-valuetext attribute can be used to convey a custom textual string to Assistive Technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Scrollbar changes.
+The aria-valuetext attribute can be used to convey a custom textual string to assistive technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Scrollbar changes.
 
 The aria-controls attribute must be set on the element that includes role="scrollbar", so that it references the ID of the scrollable container controlled by the Scrollbar.
 
@@ -2997,7 +2997,7 @@ An element that includes role="slider" must also include the aria-valuemin, aria
 
 The aria-valuenow attribute must be programmatically updated with a numerical value equal to or between the values of aria-valuemin and aria-valuemax.
 
-The aria-valuetext attribute can be used to convey a custom textual string to Assistive Technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Slider changes.
+The aria-valuetext attribute can be used to convey a custom textual string to assistive technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Slider changes.
 
 If the Slider is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="slider".
 
@@ -3132,11 +3132,15 @@ An element that includes role="spinbutton" must also include the aria-valuemin, 
 
 The aria-valuenow attribute must be programmatically updated with a numerical value equal to or between the values of aria-valuemin and aria-valuemax.
 
-The aria-valuetext attribute can be used to convey a custom textual string to Assistive Technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Spinbutton changes.
+The aria-valuetext attribute can be used to convey a custom textual string to assistive technologies instead of a numerical value as represented by aria-valuenow, the text of which should be programmatically updated every time the Spinbutton changes.
 
 If the Spinbutton is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="spinbutton".
 
 If the Spinbutton has an attached Menu that opens when Right clicked, aria-haspopup="true" must be set on the role="spinbutton" element, and the Shift+F10 and Application keystrokes should be configured to open and set focus within the Menu, and a mechanism for doing the same on touch screen devices should be added as well. (The aria-describedby attribute can be used to convey this dual functionality by implementing a Tooltip.)
+
+Progressive enhancement and responsive design considerations:
+
+In order to ensure accessibility on touch screen devices, an associated plus (+) and minus (-) Button should be implemented using onClick() to increment and decrement the Spinbutton accordingly, which must be perceivable by assistive technologies.
 </pre>
 </td>
 </tr>
@@ -3420,7 +3424,7 @@ When the mouse moves over the triggering element, or when the triggering element
 
 When the mouse moves away from the triggering element, or when the triggering element loses focus, the Tooltip should be removed or hidden.
 
-If the aria-describedby attribute is programmatically changed on the triggering element while it still has focus, a description_changed event will fire so that Assistive Technologies can convey the new Tooltip information appropriately.
+If the aria-describedby attribute is programmatically changed on the triggering element while it still has focus, a description_changed event will fire so that assistive technologies can convey the new Tooltip information appropriately.
 
 Live demo: <a target="_blank" href="http://whatsock.com/tsg/Coding%20Arena/Tooltips/Tooltip%20(Internal%20Content)/demo.htm">Simple Tooltip</a>
 </pre>
@@ -3868,7 +3872,7 @@ Rowgroup is a structural equivalent to the thead, tfoot, and tbody elements in a
 
 In cases where the nesting structure of Rowgroup and its child roles may be convoluted, or when a Rowgroup may include a nested Grid, aria-owns must be used on the role="rowgroup" element to reference all of the IDs of the first child role; which would be role="row".
 
-If focusable, an element that includes role="rowgroup" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time) This is important, because, if an explicit name is not specified, Assistive Technologies will use the combined contents of all child Rows as the name for the Rowgroup instead.
+If focusable, an element that includes role="rowgroup" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time) This is important, because, if an explicit name is not specified, assistive technologies will use the combined contents of all child Rows as the name for the Rowgroup instead.
 
 If the Rowgroup container receives focus, the focusable element must be the same that includes the role="rowgroup" attribute, and <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#focus_activedescendant">aria-activedescendant managed focus</a> must be used to reference the ID of the selected role="row", role="columnheader", role="rowheader", or role="gridcell" elements without moving focus.
 
