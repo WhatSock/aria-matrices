@@ -30,7 +30,11 @@
 			$A.css(a, 'left', -(a.offsetWidth));
 		});
 
-		generateTOC();
+		if ($A.getEl('ph'))
+			createHeaderNav();
+
+		if ($A.getEl('tocBtn'))
+			generateTOC();
 
 		if (window.navigator.onLine)
 			// Check for updates
@@ -40,7 +44,33 @@
 	if (top != window)
 		top.location.href = 'http://whatsock.com/training/matrices/';
 
-	var generateTOC = function(){
+	var hds = {}, createHeaderNav = function(){
+		var ph = $A.getEl('ph'), hs = $A.query('div.hd > h2');
+		hds = {};
+
+		for (var i = 0; i < hs.length; i++){
+			var h = hs[i];
+
+			if (ph && h.className !== 'skip'){
+				h.id = 'H' + $A.genId();
+				var a = $A.createEl('a',
+								{
+								href: '#'
+								}, null, h.id, document.createTextNode($A.getText(h)));
+
+				ph.appendChild(a);
+				$A.setAttr(h, 'tabindex', -1);
+				hds[h.id] = h;
+				$A.bind(a, 'click', function(ev){
+					hds[this.className].focus();
+					ev.preventDefault();
+				});
+
+				if (i < (hs.length - 1))
+					ph.appendChild($A.createEl('span', null, null, null, document.createTextNode(' | ')));
+			}
+		}
+	}, generateTOC = function(){
 		var links = [], pLevel = 0, map = {};
 
 		$A.query('div.hd', document, function(i, o){

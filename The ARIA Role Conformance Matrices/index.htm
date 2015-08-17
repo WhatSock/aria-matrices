@@ -44,8 +44,13 @@ The ARIA Role Conformance Matrices
 
 <div class="intro heading">
 <p>
-Related resources: <a href="http://whatsock.com/training">The Accessibility Tree - A Training Guide for Advanced Web Development</a>
+Related resources:
 </p>
+<ul><li>
+<a href="http://whatsock.com/training">The Accessibility Tree - A Training Guide for Advanced Web Development</a>
+</li><li>
+<a href="http://whatsock.com/training/matrices/visual-aria.htm">The Visual ARIA Bookmarklet</a>
+</li></ul>
 <p>
 The purpose of The ARIA Role Conformance Matrices is not to list all possible attributes that can be used on all available roles, but rather, to specifically quantify how accessibility is tied into the usage of ARIA roles, and how associated roles are hierarchically mapped.
 </p>
@@ -1361,10 +1366,300 @@ If not set to "vertical", elements with the role Separator have an implicit aria
 </table>
 </div>
 
+<div id="table" class="hd" tabindex="-1">
+<h4>
+<span>
+1.2.11: Table Role [ARIA 1.1]
+</span>
+</h4>
+</div>
+
+<div class="intro tal">
+<table aria-label="table" class="table">
+<tr>
+<th class="col">
+<span><a>Role</a></span>
+</th>
+<th class="col">
+<span><a>Required Attributes</a></span>
+</th>
+<th class="col">
+<span><a>Optional Attributes</a></span>
+</th>
+<th class="col">
+<span><a>Requires Scripting</a></span>
+</th>
+<th class="notes">
+<span><a>Implementation Notes</a></span>
+</th>
+</tr>
+
+<tr>
+<td title="Role" class="cell"><!-- Role -->
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#table">
+table
+</a>
+</td>
+<td title="Required Attributes" class="cell"><!-- Required Attributes -->
+</td>
+<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
+<ul>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">
+aria-labelledby
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">
+aria-label
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-owns">
+aria-owns
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-colcount">
+aria-colcount
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-rowcount">
+aria-rowcount
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">
+aria-describedby
+</a>
+</li>
+</ul>
+</td>
+<td title="Requires Scripting" class="cell"><!-- Requires Scripting -->
+<a>No</a>
+</td>
+<td title="Implementation Notes" class="notes"><!-- Implementation Notes -->
+<pre>
+Table is a section containing data arranged in rows and columns in the same manner as an HTML table element.
+
+The Table role is intended for tabular containers which are not interactive.
+
+The Table role must include child elements with role="rowgroup" or role="row".
+
+In cases where the nesting structure of Table and its child roles may be convoluted, or when a Table may include nested Tables or additional markup structures, aria-owns must be used on the role="table" element to reference all of the IDs of the first child role; which would be role="rowgroup" if present, or role="row" otherwise.
+</pre>
+</td>
+</tr>
+
+<tr>
+<td title="Role" class="cell"><!-- Role -->
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#rowgroup">
+rowgroup
+</a>
+</td>
+<td title="Required Attributes" class="cell"><!-- Required Attributes -->
+</td>
+<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
+<ul>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-owns">
+aria-owns
+</a>
+</li>
+</ul>
+</td>
+<td title="Requires Scripting" class="cell"><!-- Requires Scripting -->
+<a>No</a>
+</td>
+<td title="Implementation Notes" class="notes"><!-- Implementation Notes -->
+<pre>
+The Rowgroup role establishes a relationship between owned Row elements.
+
+The Rowgroup role must include child elements with role="row".
+
+Rowgroup is a structural equivalent to the thead, tfoot, and tbody elements in an HTML table element.
+
+In cases where the nesting structure of Rowgroup and its child roles may be convoluted, or when a Rowgroup may include nested  Tables or structural elements, aria-owns must be used on the role="rowgroup" element to reference all of the IDs of the first child role; which would be role="row".
+
+As with thead, tfoot, and tbody within an HTML table element, Rowgroup is an optional role within Table.
+</pre>
+</td>
+</tr>
+
+<tr>
+<td title="Role" class="cell"><!-- Role -->
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#row">
+row
+</a>
+</td>
+<td title="Required Attributes" class="cell"><!-- Required Attributes -->
+</td>
+<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
+<ul>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-owns">
+aria-owns
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-rowindex">
+aria-rowindex
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-rowspan">
+aria-rowspan
+</a>
+</li>
+</ul>
+</td>
+<td title="Requires Scripting" class="cell"><!-- Requires Scripting -->
+<a>No</a>
+</td>
+<td title="Implementation Notes" class="notes"><!-- Implementation Notes -->
+<pre>
+The Row role establishes a relationship between owned Columnheader, Rowheader, and cell elements.
+
+The Row role must include child elements with role="columnheader", role="rowheader", or role="cell".
+
+Row is a structural equivalent to the tr element in an HTML table element.
+
+In cases where the nesting structure of Row and its child roles may be convoluted, or when a Row may include nested Tables or structural elements, aria-owns must be used on the role="row" element to reference all of the IDs of the first child roles; which would be role="columnheader", role="rowheader", and role="cell".
+</pre>
+</td>
+</tr>
+
+<tr>
+<td title="Role" class="cell"><!-- Role -->
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#columnheader">
+columnheader
+</a>
+</td>
+<td title="Required Attributes" class="cell"><!-- Required Attributes -->
+</td>
+<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
+<ul>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-sort">
+aria-sort
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-colindex">
+aria-colindex
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-colspan">
+aria-colspan
+</a>
+</li>
+</ul>
+</td>
+<td title="Requires Scripting" class="cell"><!-- Requires Scripting -->
+<a>No</a>
+</td>
+<td title="Implementation Notes" class="notes"><!-- Implementation Notes -->
+<pre>
+Columnheader is a cell containing header information for a column.
+
+Columnheader is a structural equivalent to the th element in an HTML table element.
+
+If a Columnheader is sortable, the aria-sort attribute must be set appropriately on the role="columnheader" element.
+</pre>
+</td>
+</tr>
+
+<tr>
+<td title="Role" class="cell"><!-- Role -->
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#rowheader">
+rowheader
+</a>
+</td>
+<td title="Required Attributes" class="cell"><!-- Required Attributes -->
+</td>
+<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
+<ul>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-sort">
+aria-sort
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-colindex">
+aria-colindex
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-colspan">
+aria-colspan
+</a>
+</li>
+</ul>
+</td>
+<td title="Requires Scripting" class="cell"><!-- Requires Scripting -->
+<a>No</a>
+</td>
+<td title="Implementation Notes" class="notes"><!-- Implementation Notes -->
+<pre>
+Rowheader is a cell containing header information for a Row.
+
+Rowheader is a structural equivalent to the th element in an HTML table element.
+
+If a Rowheader is sortable, the aria-sort attribute must be set appropriately on the role="rowheader" element.
+</pre>
+</td>
+</tr>
+
+<tr>
+<td title="Role" class="cell"><!-- Role -->
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#cell">
+cell
+</a>
+</td>
+<td title="Required Attributes" class="cell"><!-- Required Attributes -->
+</td>
+<td title="Optional Attributes" class="cell"><!-- Optional Attributes -->
+<ul>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-colindex">
+aria-colindex
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-colspan">
+aria-colspan
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">
+aria-describedby
+</a>
+</li>
+</ul>
+</td>
+<td title="Requires Scripting" class="cell"><!-- Requires Scripting -->
+<a>No</a>
+</td>
+<td title="Implementation Notes" class="notes"><!-- Implementation Notes -->
+<pre>
+Cell is a cell containing data within a Row.
+
+Cell is a structural equivalent to the td element in an HTML table element.
+
+If a Cell includes associated Columnheader or Rowheader elements within the Table, then aria-describedby must be set on the role="cell" element in order to explicitly reference the IDs of one or both role="columnheader" and role="rowheader" elements if present.
+</pre>
+</td>
+</tr>
+
+</table>
+</div>
+
 <div id="toolbar" class="hd" tabindex="-1">
 <h4>
 <span>
-1.2.11: Toolbar Role
+1.2.12: Toolbar Role
 </span>
 </h4>
 </div>
@@ -6479,6 +6774,13 @@ If the Gridcell has an attached Menu that opens when Right clicked, aria-haspopu
 
 <div class="topLink">
 <a href="#"><img src="img/up.png" title="Back to Top" alt="Back to Top" /></a>
+</div>
+
+<div class="copyright">
+<span>
+&copy;<script type="text/javascript">document.write(new Date().getFullYear());</script> WhatSock, LLC;
+All rights reserved.
+</span>
 </div>
 
 </div>

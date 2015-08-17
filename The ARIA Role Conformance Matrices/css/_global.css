@@ -399,3 +399,53 @@ text-align: left;
 font-size: 10pt;
 width: 550px;
 }
+
+span.purpleTltp {
+border: ridge thick purple;
+background-color: white;
+color: purple;
+}
+span.blueTltp {
+border: ridge thick blue;
+background-color: white;
+color: blue;
+}
+span.redTltp {
+border: ridge thick red;
+background-color: yellow;
+color: red;
+}
+span.orangeTltp {
+border: ridge thick orange;
+background-color: black;
+color: orange;
+}
+span.greenTltp {
+border: ridge thick green;
+background-color: white;
+color: green;
+}
+
+#bookmarklet {
+text-align: left;
+}
+
+#bookmarkletBtn {
+display: inline-block;
+text-decoration: none;
+padding: 8px 11px;
+border: 1px solid #dedede;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background: #a5b8c6;
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#becbd6', endColorstr='#88a1b4'); /*  IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#becbd6), to(#88a1b4)); /*  WebKit */
+background: -moz-linear-gradient(top,  #becbd6, #88a1b4);
+border-color: #000;
+color: #000;
+text-shadow: 0 1px 0 #c4d0d9;
+-webkit-box-shadow: 0 1px 1px #d3d3d3, inset 0 1px 0 #ced8e0;
+-moz-box-shadow: 0 1px 1px #d3d3d3, inset 0 1px 0 #ced8e0;
+box-shadow: 0 1px 1px #d3d3d3, inset 0 1px 0 #ced8e0;
+}
