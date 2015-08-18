@@ -28,7 +28,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 			return 'false';
 		};
 
-		check = function(nodes, obj, frames, focused, pNode){
+		check = function(nodes, obj, frames, focused, pNode, focusHidden){
 			nodes = document.querySelectorAll(
 				'img[role], input[role], input[aria-activedescendant], input[aria-haspopup], input[aria-selected], img[aria-selected], progress');
 			obj = {};
@@ -73,6 +73,11 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 						t.setAttribute('data-ws-bm-db-match', dbs[d]);
 				}
 			}
+
+			focusHidden = document.querySelectorAll('*[hidefocus="true"]');
+
+			for (var h = 0; h < focusHidden.length; h++)
+							focusHidden[h].removeAttribute('hidefocus');
 
 			frames = document.querySelectorAll('frame, iframe');
 
