@@ -415,6 +415,11 @@ border: ridge thick red;
 background-color: yellow;
 color: red;
 }
+span.fuchsiaTltp {
+border: ridge thick fuchsia;
+background-color: white;
+color: fuchsia;
+}
 span.orangeTltp {
 border: ridge thick orange;
 background-color: black;
