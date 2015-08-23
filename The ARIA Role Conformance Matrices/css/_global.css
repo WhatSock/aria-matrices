@@ -401,32 +401,26 @@ width: 550px;
 }
 
 span.purpleTltp {
-border: ridge thick purple;
 background-color: white;
 color: purple;
 }
 span.blueTltp {
-border: ridge thick blue;
 background-color: white;
 color: blue;
 }
 span.redTltp {
-border: ridge thick red;
 background-color: yellow;
 color: red;
 }
 span.fuchsiaTltp {
-border: ridge thick fuchsia;
 background-color: white;
 color: fuchsia;
 }
 span.orangeTltp {
-border: ridge thick orange;
 background-color: black;
 color: orange;
 }
 span.greenTltp {
-border: ridge thick green;
 background-color: white;
 color: green;
 }
