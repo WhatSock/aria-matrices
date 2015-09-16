@@ -30,7 +30,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 		check = function(nodes, obj, frames, focused, pNode, focusHidden){
 			nodes = document.querySelectorAll(
-				'img[role], input[role], input[aria-activedescendant], input[aria-haspopup], input[aria-selected], img[aria-selected], progress');
+				'input, img[role], img[aria-label], img[aria-labelledby], img[aria-describedby], img[aria-haspopup="true"], img[aria-selected], progress');
 			obj = {};
 
 			for (var i = 0; i < nodes.length; i++){
