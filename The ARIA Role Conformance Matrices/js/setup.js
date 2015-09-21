@@ -20,9 +20,12 @@
 		$A.query('h2, h3, h4, h5, h6', function(i, o){
 			var d = o.parentNode, a = $A.createEl('a',
 							{
-							href: 'http://whatsock.com/training/matrices/#' + d.id,
-							title: 'Permalink: http://whatsock.com/training/matrices/#' + d.id,
-							'aria-label': 'Permalink: http://whatsock.com/training/matrices/#' + d.id
+							href: (isVisualARIA
+								? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id,
+							title: 'Permalink: ' + (isVisualARIA
+								? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id,
+							'aria-label': 'Permalink: ' + (isVisualARIA
+								? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id
 							}, null, 'permalink');
 
 			a.innerHTML = '<span aria-hidden="true">#</span>';

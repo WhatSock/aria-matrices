@@ -5,6 +5,9 @@
 <title> The Visual ARIA Bookmarklet </title>
 <meta name="Author" content="Bryan Garaventa">
 <link rel="stylesheet" type="text/css" href="css/_global.css">
+<script type="text/javascript">
+var isVisualARIA = true;
+</script>
 <script type="text/javascript" src="js/jQuery.js"></script>
 <script type="text/javascript" src="js/Acc.DC.API.js"></script>
 <script type="text/javascript" src="js/setup.js"></script>
@@ -162,6 +165,9 @@ You will then see various colored borders where ARIA roles are detected, and too
 <p>
 These borders and tooltips follow several distinct color schemes to identify the differences between static and interactive widget roles.
 </p>
+<p>
+To view the Alternative Text Calculation for any form field, link, or simple interactive widget role, hover the mouse over the active element.
+</p>
 </div>
 
 <div id="static-roles" class="hd" tabindex="-1">
@@ -232,9 +238,149 @@ When interacting with keyboard accessible widget roles, the goal is to turn both
 <p>
 If however you see two different colored borders on the same widget role, such as <span class="orangeTltp">orange</span> and <span class="redTltp">red</span>, then focus management and ARIA widget role usage for this implementation are incorrect and not programmed according to spec.
 </p>
+</div>
+
+<div id="alternative-text-calculation" class="hd" tabindex="-1">
+<h2>
+<span>
+Alternative Text Calculation
+</span>
+</h2>
+</div>
+
+<div class="intro tal">
+<p>
+Visual ARIA will automatically calculate the Alternative Text Calculation for any form field, link, or simple ARIA interactive widget role, and display this information when the mouse is hovered over the element.
+</p>
+<p>
+There are some important details about this feature that need to be explained however.
+</p>
+<p>
+There are two properties that need to be understood within the Accessibility Tree, the Name, and the Description. The Name represents the calculated label text for the active element, and the Description represents supplementary information that can be used by Assistive Technologies to accompany the Name.
+</p>
+</div>
+
+<div id="name-calculation" class="hd" tabindex="-1">
+<h3>
+<span>
+Name Calculation
+</span>
+</h3>
+</div>
+
+<div class="intro tal">
+<dl>
+<dt>
+aria-labelledby
+</dt>
+<dd>
+(Caveats: Must not be included with aria-label, nor with the HTML label element with matching 'for' and 'id' attributes. Also, aria-labelledby cannot recursively reference other elements that include aria-labelledby.)
+</dd>
+<dt>
+aria-label
+</dt>
+<dd>
+(Caveats: Only if aria-labelledby is not set. If included within a container referenced via aria-labelledby, the HTML label element with matching 'for' and 'id' attributes, or aria-describedby, the value of aria-label will supersede any embedded content or additional aria-label attribute values; which will be ignored when setting the Accessible Name of the parent role.)
+</dd>
+<dt>
+HTML label element with matching 'for' and 'id' attributes
+</dt>
+<dd>
+(Caveats: Only if aria-labelledby or aria-label is not set; on HTML input and select elements only.)
+</dd>
+<dt>
+HTML 'alt' attribute
+</dt>
+<dd>
+(Caveats: Only if aria-labelledby or aria-label is not set; on HTML img elements only.)
+</dd>
+<dt>
+HTML 'title' attribute
+</dt>
+<dd>
+(Caveats: Only if aria-labelledby, aria-label, or 'alt' is not set; on HTML img elements only.)
+</dd>
+</dl>
+</div>
+
+<div id="description-calculation" class="hd" tabindex="-1">
+<h3>
+<span>
+Description Calculation
+</span>
+</h3>
+</div>
+
+<div class="intro tal">
+<dl>
+<dt>
+aria-describedby
+</dt>
+<dd>
+(Caveats: Must not be included with the HTML 'title' attribute, which will be overwritten by aria-describedby.)
+</dd>
+<dt>
+HTML 'title' attribute
+</dt>
+<dd>
+(Caveats: Only when applied to active elements that are not HTML img elements. Must not be included with aria-describedby, which will overwrite the value of 'title' as the Description.)
+</dd>
+</dl>
+</div>
+
+<div id="important-details" class="hd" tabindex="-1">
+<h3>
+<span>
+Important Details
+</span>
+</h3>
+</div>
+
+<div class="intro tal">
+<p>
+Any use of aria-hidden="true" or the CSS properties "display:none" or "visibility:hidden", will cancel the naming calculation for the referenced element and all elements within the subtree of that element.
+</p>
+<p>
+Additionally, the Name and Description exposed by Visual ARIA strictly follows the <a href="http://www.w3.org/TR/accname-aam-1.1/" target="_blank">Alternative Text Calculation</a> for interactive elements, which may not exactly match what is represented by the Accessibility Tree within certain browsers, nor what is conveyed by Assistive Technologies.
+</p>
+<p>
+The value in exposing this calculation however, is to identify current bugs within browsers that need to be reported to their venders when discovered using Object Inspector for example, as well as bugs with Assistive Technologies that need to be reported to AT venders. This will lead to better interoperability support in the future.
+</p>
+</div>
+
+<div id="supported-active-element-types" class="hd" tabindex="-1">
+<h3>
+<span>
+Supported Active Element Types
+</span>
+</h3>
+</div>
+
+<div class="intro tal">
+<ul><li>
+All HTML input, select, and button elements.
+</li><li>
+All HTML A elements that include an 'href' attribute.
+</li><li>
+All HTML5 progress elements.
+</li><li>
+All of the ARIA roles:
+"button", "checkbox", "link", "searchbox", "scrollbar", "slider", "spinbutton", "switch", "textbox", "combobox"
+</li></ul>
+</div>
+
+<div id="notes-and-limitations" class="hd" tabindex="-1">
+<h2>
+<span>
+Notes and Limitations
+</span>
+</h2>
+</div>
+
+<div class="intro tal">
 <p>
 <b>
-Notes and limitations: Since the HTML img and input elements cannot support the use of the :before and :after CSS pseudo elements, tooltip and border coloration may sometimes differ.
+Since the HTML img, input, and progress elements cannot support the use of the :before and :after CSS pseudo elements, tooltip and border coloration may sometimes differ.
 Additionally, when ARIA role usage is right aligned, the tooltip text may run on past the right border of the screen, which unfortunately cannot be helped at this time.
 </b>
 </p>
