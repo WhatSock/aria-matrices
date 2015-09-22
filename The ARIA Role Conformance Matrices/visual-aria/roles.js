@@ -243,7 +243,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 			var accNames =
 				document.querySelectorAll(
-					'input, select, button, a[href], progress, *[role="button"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"]');
+					'input, select, button, a[href], progress, *[role="button"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"], *[role="option"], *[role="menuitem"], *[role="menuitemcheckbox"], *[role="menuitemradio"], *[role="radio"], *[role="tab"], *[role="treeitem"]');
 
 			for (var aN = 0; aN < accNames.length; aN++){
 				calcNames(accNames[aN]);
