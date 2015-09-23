@@ -105,35 +105,36 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 						return '';
 
 					return str.replace(/^\s+|\s+$/g, '');
-				}, walkDOM = function(node, fn){
+				}, walkDOM = function(node, fn, refObj){
 					if (!node)
 						return;
-					fn(node);
+					fn(node, refObj);
 					node = node.firstChild;
 
 					while (node){
-						walkDOM(node, fn);
+						walkDOM(node, fn, refObj);
 						node = node.nextSibling;
 					}
-				}, isHidden = function(o){
+				}, isHidden = function(o, refObj){
 					if (o.nodeType !== 1)
 						return false;
 
-					if ((o.getAttribute && o.getAttribute('aria-hidden') == 'true')
+					if ((o != refObj && o.getAttribute && o.getAttribute('aria-hidden') == 'true')
 						|| (o.currentStyle && (o.currentStyle['display'] == 'none' || o.currentStyle['visibility'] == 'hidden'))
 							|| (document.defaultView && document.defaultView.getComputedStyle && (document.defaultView.getComputedStyle(o,
 								'')['display'] == 'none' || document.defaultView.getComputedStyle(o, '')['visibility'] == 'hidden'))
 							|| (o.style && (o.style['display'] == 'none' || o.style['visibility'] == 'hidden')))
 						return true;
 					return false;
-				}, hasParentLabel = function(start, targ, noLabel){
+				}, hasParentLabel = function(start, targ, noLabel, rO){
 					if (start == targ)
 						return false;
 
 					while (start){
 						start = start.parentNode;
 
-						if (start.getAttribute && ((!noLabel && start.getAttribute('aria-label')) || isHidden(start)))
+						if (start.getAttribute
+							&& ((!noLabel && start.getAttribute('aria-label')) || isHidden(start, targ == document.body ? start : rO)))
 							return true;
 
 						else if (start == targ)
@@ -149,11 +150,11 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				var accName = '', accDesc = '', desc = '', aDescribedby = node.getAttribute('aria-describedby') || '',
 					title = node.getAttribute('title') || '', skip = false;
 
-				var walk = function(obj, stop){
+				var walk = function(obj, stop, refObj){
 					var nm = '';
 
-					walkDOM(obj, function(o){
-						if (skip || !o || (o.nodeType === 1 && isHidden(o)))
+					walkDOM(obj, function(o, refObj){
+						if (skip || !o || (o.nodeType === 1 && isHidden(o, refObj)))
 							return;
 
 						var name = '';
@@ -169,7 +170,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 								var a = aLabelledby.split(' ');
 
 								for (var i = 0; i < a.length; i++){
-									name += walk(document.getElementById(a[i]), true) + ' ';
+									var rO = document.getElementById(a[i]);
+									name += walk(rO, true, rO) + ' ';
 								}
 								name = trim(name);
 
@@ -186,7 +188,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 							if (!name && (o.nodeName.toLowerCase() == 'input' || o.nodeName.toLowerCase() == 'select') && o.id
 								&& document.querySelectorAll('label[for="' + o.id + '"]').length){
-								name = trim(walk(document.querySelectorAll('label[for="' + o.id + '"]')[0], true));
+								var rO = document.querySelectorAll('label[for="' + o.id + '"]')[0];
+								name = trim(walk(rO, true, rO));
 							}
 
 							if (!name
@@ -200,10 +203,10 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 							name = trim(o.data);
 						}
 
-						if (name && !hasParentLabel(o, obj)){
+						if (name && !hasParentLabel(o, obj, false, refObj)){
 							nm += ' ' + name;
 						}
-					});
+					}, refObj);
 
 					return nm;
 				};
@@ -218,7 +221,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 					var s = '', d = aDescribedby.split(' ');
 
 					for (var j = 0; j < d.length; j++){
-						s += walk(document.getElementById(d[j]), true) + ' ';
+						var rO = document.getElementById(d[j]);
+						s += walk(rO, true, rO) + ' ';
 					}
 					s = trim(s);
 
