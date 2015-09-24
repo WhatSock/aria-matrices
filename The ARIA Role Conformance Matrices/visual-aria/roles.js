@@ -119,11 +119,11 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 					if (o.nodeType !== 1 || o == refObj)
 						return false;
 
-					if ((o != refObj && o.getAttribute && o.getAttribute('aria-hidden') == 'true')
+					if (o != refObj && ((o.getAttribute && o.getAttribute('aria-hidden') == 'true')
 						|| (o.currentStyle && (o.currentStyle['display'] == 'none' || o.currentStyle['visibility'] == 'hidden'))
 							|| (document.defaultView && document.defaultView.getComputedStyle && (document.defaultView.getComputedStyle(o,
 								'')['display'] == 'none' || document.defaultView.getComputedStyle(o, '')['visibility'] == 'hidden'))
-							|| (o.style && (o.style['display'] == 'none' || o.style['visibility'] == 'hidden')))
+							|| (o.style && (o.style['display'] == 'none' || o.style['visibility'] == 'hidden'))))
 						return true;
 					return false;
 				}, hasParentLabel = function(start, targ, noLabel, refObj){
@@ -143,6 +143,9 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 					return false;
 				};
+
+				if (isHidden(node, document.body) || hasParentLabel(node, document.body, true, document.body))
+					return;
 
 				var accName = '', accDesc = '', desc = '', aDescribedby = node.getAttribute('aria-describedby') || '',
 					title = node.getAttribute('title') || '', skip = false;
@@ -190,9 +193,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 								name = trim(walk(rO, true, rO));
 							}
 
-							if (!name
-								&& ((o.nodeName.toLowerCase() == 'input' && o.getAttribute('type') == 'image') || o.nodeName.toLowerCase()
-									== 'img') && (trim(o.getAttribute('alt')) || nTitle)){
+							if (!name && (o.nodeName.toLowerCase() == 'img') && (trim(o.getAttribute('alt')) || nTitle)){
 								name = trim(o.getAttribute('alt') || nTitle);
 							}
 						}
