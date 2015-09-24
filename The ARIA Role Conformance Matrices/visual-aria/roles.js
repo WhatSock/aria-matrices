@@ -171,6 +171,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 								for (var i = 0; i < a.length; i++){
 									var rO = document.getElementById(a[i]);
+
 									name += walk(rO, true, rO) + ' ';
 								}
 								name = trim(name);
@@ -212,6 +213,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				};
 
 				accName = walk(node);
+				skip = false;
 
 				if (title){
 					desc = trim(title);
@@ -235,13 +237,19 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 				if (node.nodeName.toLowerCase() == 'input' || node.nodeName.toLowerCase() == 'img'
 					|| node.nodeName.toLowerCase() == 'progress'){
-					node.parentNode.setAttribute('data-ws-bm-name-prop', trim(accName));
-					node.parentNode.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
+					if (trim(accName))
+						node.parentNode.setAttribute('data-ws-bm-name-prop', trim(accName));
+
+					if (trim(accDesc))
+						node.parentNode.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
 				}
 
 				else{
-					node.setAttribute('data-ws-bm-name-prop', trim(accName));
-					node.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
+					if (trim(accName))
+						node.setAttribute('data-ws-bm-name-prop', trim(accName));
+
+					if (trim(accDesc))
+						node.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
 				}
 			};
 
