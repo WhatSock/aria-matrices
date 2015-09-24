@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet
+Visual ARIA Bookmarklet (9/24/2015)
 Copyright 2015 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -116,7 +116,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 						node = node.nextSibling;
 					}
 				}, isHidden = function(o, refObj){
-					if (o.nodeType !== 1)
+					if (o.nodeType !== 1 || o == refObj)
 						return false;
 
 					if ((o != refObj && o.getAttribute && o.getAttribute('aria-hidden') == 'true')
@@ -126,16 +126,16 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 							|| (o.style && (o.style['display'] == 'none' || o.style['visibility'] == 'hidden')))
 						return true;
 					return false;
-				}, hasParentLabel = function(start, targ, noLabel, rO){
-					if (start == targ)
+				}, hasParentLabel = function(start, targ, noLabel, refObj){
+					if (!start || !targ || start == targ)
 						return false;
 
 					while (start){
 						start = start.parentNode;
 
-						if (start.getAttribute
-							&& ((!noLabel && start.getAttribute('aria-label')) || isHidden(start, targ == document.body ? start : rO)))
+						if (start.getAttribute && ((!noLabel && start.getAttribute('aria-label')) || isHidden(start, refObj))){
 							return true;
+						}
 
 						else if (start == targ)
 							return false;
@@ -143,9 +143,6 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 					return false;
 				};
-
-				if (isHidden(node) || hasParentLabel(node, document.body, true))
-					return;
 
 				var accName = '', accDesc = '', desc = '', aDescribedby = node.getAttribute('aria-describedby') || '',
 					title = node.getAttribute('title') || '', skip = false;
@@ -165,8 +162,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 						}
 
 						if (o.nodeType === 1
-							&& ((!o.firstChild || (o == obj && (aLabelledby || aLabel))) || (o.firstChild && o != obj && aLabel))){
-							if (!stop && o == obj && aLabelledby){
+							&& ((!o.firstChild || (o == refObj && (aLabelledby || aLabel))) || (o.firstChild && o != refObj && aLabel))){
+							if (!stop && o == refObj && aLabelledby){
 								var a = aLabelledby.split(' ');
 
 								for (var i = 0; i < a.length; i++){
@@ -183,7 +180,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 							if (!name && aLabel){
 								name = trim(aLabel);
 
-								if (name && o == obj)
+								if (name && o == refObj)
 									skip = true;
 							}
 
@@ -204,7 +201,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 							name = trim(o.data);
 						}
 
-						if (name && !hasParentLabel(o, obj, false, refObj)){
+						if (name && !hasParentLabel(o, refObj, false, refObj)){
 							nm += ' ' + name;
 						}
 					}, refObj);
@@ -212,7 +209,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 					return nm;
 				};
 
-				accName = walk(node);
+				accName = walk(node, false, node);
 				skip = false;
 
 				if (title){
@@ -237,19 +234,15 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 				if (node.nodeName.toLowerCase() == 'input' || node.nodeName.toLowerCase() == 'img'
 					|| node.nodeName.toLowerCase() == 'progress'){
-					if (trim(accName))
-						node.parentNode.setAttribute('data-ws-bm-name-prop', trim(accName));
+					node.parentNode.setAttribute('data-ws-bm-name-prop', trim(accName));
 
-					if (trim(accDesc))
-						node.parentNode.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
+					node.parentNode.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
 				}
 
 				else{
-					if (trim(accName))
-						node.setAttribute('data-ws-bm-name-prop', trim(accName));
+					node.setAttribute('data-ws-bm-name-prop', trim(accName));
 
-					if (trim(accDesc))
-						node.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
+					node.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
 				}
 			};
 
@@ -280,7 +273,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 	if (!document.getElementById('ws-bm-aria-matrices-lnk')){
 		var m = document.createElement('span');
 		m.innerHTML
-			= '<span id="ws-bm-aria-matrices-lnk" style="position: fixed; top: 0; left: 0;padding: 3px; border: 1px solid #dedede; background: #f5f5f5; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#f9f9f9\', endColorstr=\'#f0f0f0\'); background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f0f0f0)); background: -moz-linear-gradient(top,  #f9f9f9, #f0f0f0); border-color: #000; -webkit-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; -moz-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;"><a style="display: inline-block; text-decoration: none; font-size: 12pt; padding: 6px 9px; border: 1px solid #dedede; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #525252; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#5e5e5e\', endColorstr=\'#434343\'); background: -webkit-gradient(linear, left top, left bottom, from(#5e5e5e), to(#434343)); background: -moz-linear-gradient(top,  #5e5e5e, #434343); border-color: #4c4c4c #313131 #1f1f1f; color: #fff; text-shadow: 0 1px 0 #2e2e2e; -webkit-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; -moz-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686;" target="_blank" href="http://whatsock.com/training/matrices/"><span>ARIA Role Matrices</span></a></span>';
+			= '<span id="ws-bm-aria-matrices-lnk" style="position: fixed; top: 0; left: 0;padding: 3px; border: 1px solid #dedede; background: #f5f5f5; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#f9f9f9\', endColorstr=\'#f0f0f0\'); background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f0f0f0)); background: -moz-linear-gradient(top,  #f9f9f9, #f0f0f0); border-color: #000; -webkit-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; -moz-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;"><a style="display: inline-block; text-decoration: none; font-size: 10pt; padding: 6px 9px; border: 1px solid #dedede; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #525252; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#5e5e5e\', endColorstr=\'#434343\'); background: -webkit-gradient(linear, left top, left bottom, from(#5e5e5e), to(#434343)); background: -moz-linear-gradient(top,  #5e5e5e, #434343); border-color: #4c4c4c #313131 #1f1f1f; color: #fff; text-shadow: 0 1px 0 #2e2e2e; -webkit-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; -moz-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686;" target="_blank" href="http://whatsock.com/training/matrices/"><span>ARIA Role Matrices</span></a></span>';
 		document.body.appendChild(m);
 	}
 })();
