@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (9/24/2015)
+Visual ARIA Bookmarklet (11/27/2015)
 Copyright 2015 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -133,7 +133,11 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 					while (start){
 						start = start.parentNode;
 
-						if (start.getAttribute && ((!noLabel && start.getAttribute('aria-label')) || isHidden(start, refObj))){
+						var rP = start.getAttribute ? start.getAttribute('role') : '';
+						rP = (rP != 'presentation' && rP != 'none') ? false : true;
+
+						if (!rP && start.getAttribute
+							&& ((!noLabel && trim(start.getAttribute('aria-label'))) || isHidden(start, refObj))){
 							return true;
 						}
 
@@ -148,7 +152,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 					return;
 
 				var accName = '', accDesc = '', desc = '', aDescribedby = node.getAttribute('aria-describedby') || '',
-					title = node.getAttribute('title') || '', skip = false;
+					title = node.getAttribute('title') || '', skip = false, rPresentation = node.getAttribute('role');
+				rPresentation = (rPresentation != 'presentation' && rPresentation != 'none') ? false : true;
 
 				var walk = function(obj, stop, refObj){
 					var nm = '';
@@ -161,49 +166,52 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 						if (o.nodeType === 1){
 							var aLabelledby = o.getAttribute('aria-labelledby') || '', aLabel = o.getAttribute('aria-label') || '',
-								nTitle = o.getAttribute('title') || '';
+								nTitle = o.getAttribute('title') || '', rolePresentation = o.getAttribute('role');
+							rolePresentation = (rolePresentation != 'presentation' && rolePresentation != 'none') ? false : true;
 						}
 
 						if (o.nodeType === 1
 							&& ((!o.firstChild || (o == refObj && (aLabelledby || aLabel))) || (o.firstChild && o != refObj && aLabel))){
 							if (!stop && o == refObj && aLabelledby){
-								var a = aLabelledby.split(' ');
+								if (!rolePresentation){
+									var a = aLabelledby.split(' ');
 
-								for (var i = 0; i < a.length; i++){
-									var rO = document.getElementById(a[i]);
-
-									name += walk(rO, true, rO) + ' ';
+									for (var i = 0; i < a.length; i++){
+										var rO = document.getElementById(a[i]);
+										name += ' ' + walk(rO, true, rO) + ' ';
+									}
 								}
-								name = trim(name);
 
-								if (name)
+								if (trim(name) || rolePresentation)
 									skip = true;
 							}
 
-							if (!name && aLabel){
-								name = trim(aLabel);
+							if (!trim(name) && aLabel && !rolePresentation){
+								name = ' ' + trim(aLabel) + ' ';
 
-								if (name && o == refObj)
+								if (trim(name) && o == refObj)
 									skip = true;
 							}
 
-							if (!name && (o.nodeName.toLowerCase() == 'input' || o.nodeName.toLowerCase() == 'select') && o.id
-								&& document.querySelectorAll('label[for="' + o.id + '"]').length){
+							if (!trim(name)
+								&& !rolePresentation && (o.nodeName.toLowerCase() == 'input' || o.nodeName.toLowerCase() == 'select') && o.id
+									&& document.querySelectorAll('label[for="' + o.id + '"]').length){
 								var rO = document.querySelectorAll('label[for="' + o.id + '"]')[0];
-								name = trim(walk(rO, true, rO));
+								name = ' ' + trim(walk(rO, true, rO)) + ' ';
 							}
 
-							if (!name && (o.nodeName.toLowerCase() == 'img') && (trim(o.getAttribute('alt')) || nTitle)){
-								name = trim(o.getAttribute('alt') || nTitle);
+							if (!trim(name)
+								&& !rolePresentation && (o.nodeName.toLowerCase() == 'img') && (trim(o.getAttribute('alt')) || nTitle)){
+								name = ' ' + trim(o.getAttribute('alt') || nTitle) + ' ';
 							}
 						}
 
 						else if (o.nodeType === 3){
-							name = trim(o.data);
+							name = o.data;
 						}
 
 						if (name && !hasParentLabel(o, refObj, false, refObj)){
-							nm += ' ' + name;
+							nm += name;
 						}
 					}, refObj);
 
@@ -213,37 +221,39 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				accName = walk(node, false, node);
 				skip = false;
 
-				if (title){
+				if (title && !rPresentation){
 					desc = trim(title);
 				}
 
-				if (aDescribedby){
+				if (aDescribedby && !rPresentation){
 					var s = '', d = aDescribedby.split(' ');
 
 					for (var j = 0; j < d.length; j++){
 						var rO = document.getElementById(d[j]);
-						s += walk(rO, true, rO) + ' ';
+						s += ' ' + walk(rO, true, rO) + ' ';
 					}
-					s = trim(s);
 
-					if (s)
+					if (trim(s))
 						desc = s;
 				}
 
-				if (desc)
+				if (trim(desc) && !rPresentation)
 					accDesc = desc;
+
+				accName = trim(accName.replace(/\s\s+/g, ' '));
+				accDesc = trim(accDesc.replace(/\s\s+/g, ' '));
 
 				if (node.nodeName.toLowerCase() == 'input' || node.nodeName.toLowerCase() == 'img'
 					|| node.nodeName.toLowerCase() == 'progress'){
-					node.parentNode.setAttribute('data-ws-bm-name-prop', trim(accName));
+					node.parentNode.setAttribute('data-ws-bm-name-prop', accName);
 
-					node.parentNode.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
+					node.parentNode.setAttribute('data-ws-bm-desc-prop', accDesc);
 				}
 
 				else{
-					node.setAttribute('data-ws-bm-name-prop', trim(accName));
+					node.setAttribute('data-ws-bm-name-prop', accName);
 
-					node.setAttribute('data-ws-bm-desc-prop', trim(accDesc));
+					node.setAttribute('data-ws-bm-desc-prop', accDesc);
 				}
 			};
 

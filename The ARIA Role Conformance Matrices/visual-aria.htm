@@ -274,13 +274,13 @@ Name Calculation
 aria-labelledby
 </dt>
 <dd>
-(Caveats: Must not be included with aria-label, nor with the HTML label element with matching 'for' and 'id' attributes. Also, aria-labelledby cannot recursively reference other elements that include aria-labelledby.)
+(Caveats: Must not be included with aria-label, nor with the HTML label element with matching 'for' and 'id' attributes. Also, aria-labelledby cannot recursively reference other elements that include aria-labelledby. The presence of role="presentation" or role="none" will nullify aria-labelledby on the same node.)
 </dd>
 <dt>
 aria-label
 </dt>
 <dd>
-(Caveats: Only if aria-labelledby is not set. If included within a container referenced via aria-labelledby, the HTML label element with matching 'for' and 'id' attributes, or aria-describedby, the value of aria-label will supersede any embedded content or additional aria-label attribute values; which will be ignored when setting the Accessible Name of the parent role.)
+(Caveats: Only if aria-labelledby is not set. If included within a container referenced via aria-labelledby, the HTML label element with matching 'for' and 'id' attributes, or aria-describedby, the value of aria-label will supersede any embedded content or additional aria-label attribute values; which will be ignored when setting the Accessible Name of the parent role. The presence of role="presentation" or role="none" will nullify aria-label on the same node.)
 </dd>
 <dt>
 HTML label element with matching 'for' and 'id' attributes
@@ -292,13 +292,13 @@ HTML label element with matching 'for' and 'id' attributes
 HTML 'alt' attribute
 </dt>
 <dd>
-(Caveats: Only if aria-labelledby or aria-label is not set; on HTML img elements only.)
+(Caveats: Only if aria-labelledby or aria-label is not set; on HTML img elements only. The presence of role="presentation" or role="none" will nullify 'alt' on the same node.)
 </dd>
 <dt>
 HTML 'title' attribute
 </dt>
 <dd>
-(Caveats: Only if aria-labelledby, aria-label, or 'alt' is not set; on HTML img elements only.)
+(Caveats: Only if aria-labelledby, aria-label, or 'alt' is not set; on HTML img elements only. The presence of role="presentation" or role="none" will nullify 'title' on the same node.)
 </dd>
 </dl>
 </div>
@@ -317,13 +317,13 @@ Description Calculation
 aria-describedby
 </dt>
 <dd>
-(Caveats: Must not be included with the HTML 'title' attribute, which will be overwritten by aria-describedby.)
+(Caveats: Must not be included with the HTML 'title' attribute, which will be overwritten by aria-describedby. The presence of role="presentation" or role="none" will nullify aria-describedby on the same node.)
 </dd>
 <dt>
 HTML 'title' attribute
 </dt>
 <dd>
-(Caveats: Only when applied to active elements that are not HTML img elements. Must not be included with aria-describedby, which will overwrite the value of 'title' as the Description.)
+(Caveats: Only when applied to active elements that are not HTML img elements. Must not be included with aria-describedby, which will overwrite the value of 'title' as the Description. The presence of role="presentation" or role="none" will nullify 'title' on the same node.)
 </dd>
 </dl>
 </div>
@@ -341,10 +341,16 @@ Important Details
 Any use of aria-hidden="true" or the CSS properties "display:none" or "visibility:hidden", will cancel the naming calculation for the referenced element and all elements within the subtree of that element.
 </p>
 <p>
-Additionally, the Name and Description exposed by Visual ARIA strictly follows the <a href="http://www.w3.org/TR/accname-aam-1.1/" target="_blank">Alternative Text Calculation</a> for interactive elements, which may not exactly match what is represented by the Accessibility Tree within certain browsers, nor what is conveyed by Assistive Technologies.
+Additionally, the presence of CSS content via the :before and :after pseudo elements are also included as part of the naming calculation.
+</p>
+<p>
+The Name and Description exposed by Visual ARIA strictly follows the <a href="http://www.w3.org/TR/accname-aam-1.1/" target="_blank">Alternative Text Calculation</a> for interactive elements, which may not exactly match what is represented by the Accessibility Tree within certain browsers, nor what is conveyed by Assistive Technologies.
 </p>
 <p>
 The value in exposing this calculation however, is to identify current bugs within browsers that need to be reported to their venders when discovered using Object Inspector for example, as well as bugs with Assistive Technologies that need to be reported to AT venders. This will lead to better interoperability support in the future.
+</p>
+<p>
+It is important to note that Visual ARIA cannot access content added using CSS pseudo elements as part of the estimated naming calculation, since there is no way to retrieve this information using JavaScript.
 </p>
 </div>
 
