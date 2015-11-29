@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (11/27/2015)
+Visual ARIA Bookmarklet (11/28/2015)
 Copyright 2015 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -240,8 +240,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				if (trim(desc) && !rPresentation)
 					accDesc = desc;
 
-				accName = trim(accName.replace(/\s\s+/g, ' '));
-				accDesc = trim(accDesc.replace(/\s\s+/g, ' '));
+				accName = trim(accName.replace(/\s/g, ' ').replace(/\s\s+/g, ' '));
+				accDesc = trim(accDesc.replace(/\s/g, ' ').replace(/\s\s+/g, ' '));
 
 				if (node.nodeName.toLowerCase() == 'input' || node.nodeName.toLowerCase() == 'img'
 					|| node.nodeName.toLowerCase() == 'progress'){
