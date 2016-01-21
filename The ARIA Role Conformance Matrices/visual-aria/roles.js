@@ -1,6 +1,6 @@
 /*!
-Visual ARIA Bookmarklet (11/28/2015)
-Copyright 2015 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
+Visual ARIA Bookmarklet (01/21/2016)
+Copyright 2016 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
 
@@ -194,15 +194,19 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 							}
 
 							if (!trim(name)
-								&& !rolePresentation && (o.nodeName.toLowerCase() == 'input' || o.nodeName.toLowerCase() == 'select') && o.id
-									&& document.querySelectorAll('label[for="' + o.id + '"]').length){
+								&& !rolePresentation && (o.nodeName.toLowerCase() == 'input' || o.nodeName.toLowerCase() == 'select'
+									|| o.nodeName.toLowerCase() == 'textarea')
+									&& o.id && document.querySelectorAll('label[for="' + o.id + '"]').length){
 								var rO = document.querySelectorAll('label[for="' + o.id + '"]')[0];
 								name = ' ' + trim(walk(rO, true, rO)) + ' ';
 							}
 
-							if (!trim(name)
-								&& !rolePresentation && (o.nodeName.toLowerCase() == 'img') && (trim(o.getAttribute('alt')) || nTitle)){
-								name = ' ' + trim(o.getAttribute('alt') || nTitle) + ' ';
+							if (!trim(name) && !rolePresentation && (o.nodeName.toLowerCase() == 'img') && (trim(o.getAttribute('alt')))){
+								name = ' ' + trim(o.getAttribute('alt')) + ' ';
+							}
+
+							if (!trim(name) && !rolePresentation && nTitle){
+								name = ' ' + trim(nTitle) + ' ';
 							}
 						}
 
@@ -243,8 +247,11 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				accName = trim(accName.replace(/\s/g, ' ').replace(/\s\s+/g, ' '));
 				accDesc = trim(accDesc.replace(/\s/g, ' ').replace(/\s\s+/g, ' '));
 
-				if (node.nodeName.toLowerCase() == 'input' || node.nodeName.toLowerCase() == 'img'
-					|| node.nodeName.toLowerCase() == 'progress'){
+				if (accName == accDesc)
+					accDesc = '';
+
+				if (node.nodeName.toLowerCase() == 'input' || node.nodeName.toLowerCase() == 'textarea'
+					|| node.nodeName.toLowerCase() == 'img' || node.nodeName.toLowerCase() == 'progress'){
 					node.parentNode.setAttribute('data-ws-bm-name-prop', accName);
 
 					node.parentNode.setAttribute('data-ws-bm-desc-prop', accDesc);
@@ -259,7 +266,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 			var accNames =
 				document.querySelectorAll(
-					'input, select, button, a[href], progress, *[role="button"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"], *[role="option"], *[role="menuitem"], *[role="menuitemcheckbox"], *[role="menuitemradio"], *[role="radio"], *[role="tab"], *[role="treeitem"]');
+					'textarea, input, select, button, a[href], progress, *[role="button"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"], *[role="option"], *[role="menuitem"], *[role="menuitemcheckbox"], *[role="menuitemradio"], *[role="radio"], *[role="tab"], *[role="treeitem"]');
 
 			for (var aN = 0; aN < accNames.length; aN++){
 				calcNames(accNames[aN]);

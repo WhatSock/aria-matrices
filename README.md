@@ -1,8 +1,10 @@
 The ARIA Role Conformance Matrices
 ========
 
-Which now includes the Visual ARIA Bookmarklet (revision 9/20/2015).
+Including the Visual ARIA Bookmarklet (revision 01/21/2016).
 Reference: http://whatsock.com/training/matrices/visual-aria.htm
+( The interactive widget naming computation within Visual ARIA is geared to reflect the naming algorithm described at
+http://www.ssbbartgroup.com/blog/how-the-w3c-text-alternative-computation-works/ )
 
 The purpose of The ARIA Role Conformance Matrices is not to list all possible attributes that can be used on all available roles, but rather, to specifically quantify how accessibility is tied into the usage of ARIA roles, and how associated roles are hierarchically mapped. 
 
