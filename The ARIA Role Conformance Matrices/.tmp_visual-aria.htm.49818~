@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title> The Visual ARIA Bookmarklet </title>
         <meta name="Author" content="Bryan Garaventa">
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link rel="stylesheet" type="text/css" href="css/global.css">
         <script type="text/javascript">
             var isVisualARIA = true;

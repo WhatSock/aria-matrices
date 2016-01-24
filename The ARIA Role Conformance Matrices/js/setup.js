@@ -69,8 +69,8 @@
 					ev.preventDefault();
 				});
 
-				if (i < (hs.length - 1))
-					ph.appendChild($A.createEl('span', null, null, null, document.createTextNode(' | ')));
+				/*if (i < (hs.length - 1))
+					ph.appendChild($A.createEl('span', null, null, null, document.createTextNode(' | ')));*/
 			}
 		}
 	}, generateTOC = function(){
