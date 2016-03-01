@@ -5,6 +5,10 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 */
 
 (function(){
+
+	// Set for offline usage if downloaded to prevent online loading of roles.css
+	var useOffline = false;
+
 	if (!document.getElementById('ws-bm-aria-matrices-lnk')){
 		var s = document.createElement('span');
 		s.className = 'WS-BM-Loading-Msg';
@@ -277,11 +281,13 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 		setTimeout(checkNames, 5000);
 
-		var l = document.createElement('link');
-		l.type = 'text/css';
-		l.rel = 'stylesheet';
-		l.href = 'https://gutterstar.bizland.com/whatsock/training/matrices/visual-aria/roles.css';
-		document.head.appendChild(l);
+		if (!useOffline){
+			var l = document.createElement('link');
+			l.type = 'text/css';
+			l.rel = 'stylesheet';
+			l.href = 'https://gutterstar.bizland.com/whatsock/training/matrices/visual-aria/roles.css';
+			document.head.appendChild(l);
+		}
 
 		check();
 	};
