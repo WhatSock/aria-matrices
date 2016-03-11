@@ -1,13 +1,16 @@
 /*!
-Visual ARIA Bookmarklet (01/21/2016)
+Visual ARIA Bookmarklet (03/11/2016)
 Copyright 2016 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
 
 (function(){
 
-	// Set for offline usage if downloaded to prevent online loading of roles.css
-	var useOffline = false;
+	// Disable or enable dynamic CSS file loading
+	var useOffline = false,
+
+	// Base path for dynamic loading of individual CSS files, public access should use an absolute url with https instead
+	basePath = 'https://gutterstar.bizland.com/whatsock/training/matrices/visual-aria/public/';
 
 	if (!document.getElementById('ws-bm-aria-matrices-lnk')){
 		var s = document.createElement('span');
@@ -17,7 +20,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 		document.body.appendChild(s);
 	}
 
-	var WSBMInit = function(attrs, isNested, check){
+	var WSBMInit = function(attrs, isNested, check, loaded){
 		attrs
 			= 'aria-disabled,aria-readonly,aria-haspopup,aria-orientation,aria-label,aria-labelledby,aria-describedby,aria-pressed,aria-checked,aria-valuemin,aria-valuemax,aria-valuenow,aria-valuetext,aria-controls,aria-autocomplete,aria-expanded,aria-owns,aria-activedescendant,aria-posinset,aria-setsize,aria-level,role'.split(
 				',');
@@ -33,6 +36,60 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 		};
 
 		check = function(nodes, obj, frames, focused, pNode, focusHidden){
+			if (loaded && loaded.init){
+				if (!loaded.comboboxListbox
+					&& document.querySelectorAll('*[role="combobox"], *[role="listbox"], *[role="option"]').length){
+					loadCSS('7combobox-listbox.css');
+					loaded.comboboxListbox = true;
+				}
+
+				if (!loaded.menuMenubar
+					&& document.querySelectorAll(
+						'*[role="menu"], *[role="menubar"], *[role="menuitem"], *[role="menuitemradio"], *[role="menuitemcheckbox"]').length)
+					{
+					loadCSS('8menu-menubar.css');
+					loaded.menuMenubar = true;
+				}
+
+				if (!loaded.radiogroup && document.querySelectorAll('*[role="radiogroup"], *[role="radio"]').length){
+					loadCSS('9radiogroup.css');
+					loaded.radiogroup = true;
+				}
+
+				if (!loaded.tablist && document.querySelectorAll('*[role="tablist"], *[role="tab"], *[role="tabpanel"]').length){
+					loadCSS('10tablist.css');
+					loaded.tablist = true;
+				}
+
+				if (!loaded.tree && document.querySelectorAll('*[role="tree"], *[role="treeitem"]').length){
+					loadCSS('11tree.css');
+					loaded.tree = true;
+				}
+
+				if (!loaded.treegridGridTable
+					&& document.querySelectorAll(
+						'*[role="treegrid"], *[role="grid"], *[role="table"], *[role="rowgroup"], *[role="row"], *[role="columnheader"], *[role="rowheader"], *[role="gridcell"], *[role="cell"]').length)
+					{
+					loadCSS('12treegrid-grid-table.css');
+					loaded.treegridGridTable = true;
+				}
+			}
+
+			if (loaded && !loaded.init){
+				loadCSS('1roles.css');
+				loaded.init = true;
+				loadCSS('2landmarks.css');
+				loaded.landmarks = true;
+				loadCSS('3structural.css');
+				loaded.structural = true;
+				loadCSS('4dialogs.css');
+				loaded.dialogs = true;
+				loadCSS('5live-regions.css');
+				loaded.liveRegions = true;
+				loadCSS('6simple-widgets.css');
+				loaded.simpleWidgets = true;
+			}
+
 			nodes = document.querySelectorAll(
 				'input, img[role], img[aria-label], img[aria-labelledby], img[aria-describedby], img[aria-haspopup="true"], img[aria-selected], progress');
 			obj = {};
@@ -95,7 +152,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				catch (e){}
 			}
 
-			setTimeout(check, 2000);
+			setTimeout(check, 3000);
 		};
 
 		var checkNames = function(){
@@ -282,11 +339,29 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 		setTimeout(checkNames, 5000);
 
 		if (!useOffline){
-			var l = document.createElement('link');
-			l.type = 'text/css';
-			l.rel = 'stylesheet';
-			l.href = 'https://gutterstar.bizland.com/whatsock/training/matrices/visual-aria/roles.css';
-			document.head.appendChild(l);
+			loaded =
+							{
+							init: false,
+							landmarks: false,
+							structural: false,
+							dialogs: false,
+							liveRegions: false,
+							simpleWidgets: false,
+							comboboxListbox: false,
+							menuMenubar: false,
+							radiogroup: false,
+							tablist: false,
+							tree: false,
+							treegridGridTable: false
+							};
+
+			var loadCSS = function(file){
+				var l = document.createElement('link');
+				l.type = 'text/css';
+				l.rel = 'stylesheet';
+				l.href = basePath + file;
+				document.head.appendChild(l);
+			};
 		}
 
 		check();
