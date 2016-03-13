@@ -635,7 +635,7 @@ content: ' (focusable) (collapsed) (readonly) [ARIA] Combobox aria-labelledby=' 
 }
 
 *[data-ws-bm-name-prop]:hover:before {
-margin-top: -20px;
+margin-top: -2.5em;
 height: auto; width: auto;
 position: absolute; padding: 1px 0;
 z-index: 10000;
