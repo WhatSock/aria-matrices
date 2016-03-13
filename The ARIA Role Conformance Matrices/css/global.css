@@ -426,6 +426,14 @@ figcaption {
 	border-top: 1px dotted #2E3135;
 }
 
+/* INTRODUCTION */
+
+div.introduction {max-width: 35em; margin-bottom: 2rem;}
+div.introduction p {font-size: 1.1em; line-height: 1.45;}
+div.introduction p + p {margin-top: 0.8em;}
+
+
+
 /* --------------------------------------------------------------------------- */
 /* ---------------------------------- UTILITIES ------------------------------ */
 /* --------------------------------------------------------------------------- */
@@ -666,7 +674,7 @@ dl.calculation {
 		margin: 0 0.5em 0;
 		border: none;
 	}
-	 nav a:nth-child(3) {padding-left: 120px; margin-left: 5%;}
+	 nav a:nth-child(2) {padding-left: 120px; margin-left: 5%;}
 	
 	div.demo-block .trigger {
 		float: right;
@@ -694,6 +702,9 @@ dl.calculation {
 		flex: 1 1 70%;
 		margin-left: 5%;
 	}
+	
+	div.introduction {margin: 2rem 0 4rem;}
+	div.introduction p {font-size: 1.3em;}
 }
 
 
