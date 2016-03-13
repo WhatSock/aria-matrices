@@ -8986,8 +8986,7 @@ content: ' (focused) [ARIA] Tooltip (a tooltip should not receive focus) ';
 }
 
 *[data-ws-bm-name-prop]:hover:before {
-margin-top: -1em;
-display: table;
+margin-top: -20px;
 height: auto; width: auto;
 position: absolute; padding: 1px 0;
 z-index: 10000;

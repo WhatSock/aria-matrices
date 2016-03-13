@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (03/11/2016)
+Visual ARIA Bookmarklet (03/12/2016)
 Copyright 2016 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -37,57 +37,62 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 		check = function(nodes, obj, frames, focused, pNode, focusHidden){
 			if (loaded && loaded.init){
-				if (!loaded.comboboxListbox
+				if (!loaded.comboboxListbox && !document.getElementById('ws-visual-aria-7')
 					&& document.querySelectorAll('*[role="combobox"], *[role="listbox"], *[role="option"]').length){
-					loadCSS('7combobox-listbox.css');
 					loaded.comboboxListbox = true;
+					loadCSS('7combobox-listbox.css', '7');
 				}
 
 				if (!loaded.menuMenubar
-					&& document.querySelectorAll(
-						'*[role="menu"], *[role="menubar"], *[role="menuitem"], *[role="menuitemradio"], *[role="menuitemcheckbox"]').length)
+					&& !document.getElementById('ws-visual-aria-8')
+						&& document.querySelectorAll(
+							'*[role="menu"], *[role="menubar"], *[role="menuitem"], *[role="menuitemradio"], *[role="menuitemcheckbox"]').length)
 					{
-					loadCSS('8menu-menubar.css');
 					loaded.menuMenubar = true;
+					loadCSS('8menu-menubar.css', '8');
 				}
 
-				if (!loaded.radiogroup && document.querySelectorAll('*[role="radiogroup"], *[role="radio"]').length){
-					loadCSS('9radiogroup.css');
+				if (!loaded.radiogroup && !document.getElementById('ws-visual-aria-9')
+					&& document.querySelectorAll('*[role="radiogroup"], *[role="radio"]').length){
 					loaded.radiogroup = true;
+					loadCSS('9radiogroup.css', '9');
 				}
 
-				if (!loaded.tablist && document.querySelectorAll('*[role="tablist"], *[role="tab"], *[role="tabpanel"]').length){
-					loadCSS('10tablist.css');
+				if (!loaded.tablist && !document.getElementById('ws-visual-aria-10')
+					&& document.querySelectorAll('*[role="tablist"], *[role="tab"], *[role="tabpanel"]').length){
 					loaded.tablist = true;
+					loadCSS('10tablist.css', '10');
 				}
 
-				if (!loaded.tree && document.querySelectorAll('*[role="tree"], *[role="treeitem"]').length){
-					loadCSS('11tree.css');
+				if (!loaded.tree && !document.getElementById('ws-visual-aria-11')
+					&& document.querySelectorAll('*[role="tree"], *[role="treeitem"]').length){
 					loaded.tree = true;
+					loadCSS('11tree.css', '11');
 				}
 
 				if (!loaded.treegridGridTable
-					&& document.querySelectorAll(
-						'*[role="treegrid"], *[role="grid"], *[role="table"], *[role="rowgroup"], *[role="row"], *[role="columnheader"], *[role="rowheader"], *[role="gridcell"], *[role="cell"]').length)
+					&& !document.getElementById('ws-visual-aria-12')
+						&& document.querySelectorAll(
+							'*[role="treegrid"], *[role="grid"], *[role="table"], *[role="rowgroup"], *[role="row"], *[role="columnheader"], *[role="rowheader"], *[role="gridcell"], *[role="cell"]').length)
 					{
-					loadCSS('12treegrid-grid-table.css');
 					loaded.treegridGridTable = true;
+					loadCSS('12treegrid-grid-table.css', '12');
 				}
 			}
 
 			if (loaded && !loaded.init){
-				loadCSS('1roles.css');
 				loaded.init = true;
-				loadCSS('2landmarks.css');
+				loadCSS('1roles.css', '1');
 				loaded.landmarks = true;
-				loadCSS('3structural.css');
+				loadCSS('2landmarks.css', '2');
 				loaded.structural = true;
-				loadCSS('4dialogs.css');
+				loadCSS('3structural.css', '3');
 				loaded.dialogs = true;
-				loadCSS('5live-regions.css');
+				loadCSS('4dialogs.css', '4');
 				loaded.liveRegions = true;
-				loadCSS('6simple-widgets.css');
+				loadCSS('5live-regions.css', '5');
 				loaded.simpleWidgets = true;
+				loadCSS('6simple-widgets.css', '6');
 			}
 
 			nodes = document.querySelectorAll(
@@ -355,11 +360,12 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 							treegridGridTable: false
 							};
 
-			var loadCSS = function(file){
+			var loadCSS = function(file, i){
 				var l = document.createElement('link');
 				l.type = 'text/css';
 				l.rel = 'stylesheet';
 				l.href = basePath + file;
+				l.id = 'ws-visual-aria-' + i;
 				document.head.appendChild(l);
 			};
 		}
