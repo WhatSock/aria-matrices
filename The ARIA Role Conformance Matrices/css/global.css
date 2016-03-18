@@ -201,9 +201,18 @@ main {
 aside {color: #000; background: #d9e8e9; padding: 2rem 5%;}
 
 p.baseline {font-size: 0.75em; margin-top: 1.5em;}
-p.logo {position: absolute; top: 2rem; left: 50%; width: 100px; margin-left: -50px;}
+
+p.logo {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    width: 100px;
+	height: 100px;
+    margin-left: -50px;
+}
 	
 	p.logo a {background: transparent;}
+	p.logo img {max-height: 100%;}
 
 
 /* --------------- FOOTER --------------- */
@@ -370,6 +379,8 @@ nav button:hover, nav a:hover {
 	background: #E2A037;
 	text-decoration: none;
 }
+
+nav a.permalink {display: none;}
 
 nav li.active button, nav li.active a, nav li.active a:link, nav li.active a:visited {
 	color: #191B1D;
@@ -710,7 +721,7 @@ dl.calculation {
 
 @media screen and (min-width: 1000px) {
 	h1 {font-size: 5vw; line-height: 80px; text-align: left; padding: 0 0 0 120px; margin-left: 5%;}
-	p.logo {width: 80px; left: 5%; margin: 0;}
+	p.logo {width: 80px; height: 80px; left: 5%; margin: 0;}
 	
 	main {min-height: 800px;}
 	
