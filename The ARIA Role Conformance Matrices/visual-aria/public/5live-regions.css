@@ -12,7 +12,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
 }
 *[aria-live][aria-atomic]:before {
@@ -21,7 +21,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
 }
 *[aria-live][aria-relevant]:before {
@@ -30,7 +30,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[aria-live][aria-relevant][aria-atomic]:before {
@@ -39,7 +39,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 
@@ -59,7 +59,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive ';
 }
 *[role="alert"][aria-live]:before {
@@ -68,7 +68,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
 }
 *[role="alert"][aria-atomic]:before {
@@ -77,7 +77,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="alert"][aria-atomic][aria-live]:before {
@@ -86,7 +86,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="alert"][aria-relevant]:before {
@@ -95,7 +95,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="alert"][aria-relevant][aria-live]:before {
@@ -104,7 +104,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="alert"][aria-relevant][aria-atomic]:before {
@@ -113,7 +113,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="alert"][aria-relevant][aria-atomic][aria-live]:before {
@@ -122,7 +122,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 
@@ -142,7 +142,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite ';
 }
 *[role="log"][aria-live]:before {
@@ -151,7 +151,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
 }
 *[role="log"][aria-atomic]:before {
@@ -160,7 +160,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="log"][aria-atomic][aria-live]:before {
@@ -169,7 +169,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="log"][aria-relevant]:before {
@@ -178,7 +178,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="log"][aria-relevant][aria-live]:before {
@@ -187,7 +187,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="log"][aria-relevant][aria-atomic]:before {
@@ -196,7 +196,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="log"][aria-relevant][aria-atomic][aria-live]:before {
@@ -205,7 +205,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 
@@ -225,7 +225,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off ';
 }
 *[role="marquee"][aria-live]:before {
@@ -234,7 +234,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
 }
 *[role="marquee"][aria-atomic]:before {
@@ -243,7 +243,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="marquee"][aria-atomic][aria-live]:before {
@@ -252,7 +252,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="marquee"][aria-relevant]:before {
@@ -261,7 +261,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="marquee"][aria-relevant][aria-live]:before {
@@ -270,7 +270,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="marquee"][aria-relevant][aria-atomic]:before {
@@ -279,7 +279,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="marquee"][aria-relevant][aria-atomic][aria-live]:before {
@@ -288,7 +288,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 
@@ -308,7 +308,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite ';
 }
 *[role="status"][aria-live]:before {
@@ -317,7 +317,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
 }
 *[role="status"][aria-atomic]:before {
@@ -326,7 +326,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="status"][aria-atomic][aria-live]:before {
@@ -335,7 +335,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="status"][aria-relevant]:before {
@@ -344,7 +344,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="status"][aria-relevant][aria-live]:before {
@@ -353,7 +353,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="status"][aria-relevant][aria-atomic]:before {
@@ -362,7 +362,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="status"][aria-relevant][aria-atomic][aria-live]:before {
@@ -371,7 +371,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 
@@ -391,7 +391,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off ';
 }
 *[role="timer"][aria-live]:before {
@@ -400,7 +400,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
 }
 *[role="timer"][aria-atomic]:before {
@@ -409,7 +409,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="timer"][aria-atomic][aria-live]:before {
@@ -418,7 +418,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
 }
 *[role="timer"][aria-relevant]:before {
@@ -427,7 +427,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="timer"][aria-relevant][aria-live]:before {
@@ -436,7 +436,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="timer"][aria-relevant][aria-atomic]:before {
@@ -445,7 +445,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }
 *[role="timer"][aria-relevant][aria-atomic][aria-live]:before {
@@ -454,6 +454,6 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: fuchsia;
-font-size: .9em;
+font-size: .9em; font-weight: 900;
 content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
 }

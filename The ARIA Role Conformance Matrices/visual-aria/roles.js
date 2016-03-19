@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (03/12/2016)
+Visual ARIA Bookmarklet (03/18/2016)
 Copyright 2016 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -10,7 +10,10 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 	var useOffline = false,
 
 	// Base path for dynamic loading of individual CSS files, public access should use an absolute url with https instead
-	basePath = 'https://gutterstar.bizland.com/whatsock/training/matrices/visual-aria/public/';
+	basePath = 'https://gutterstar.bizland.com/whatsock/training/matrices/visual-aria/public/',
+
+	// Set millisecond interval for dynamically loading supporting CSS files and performing the naming calculation for widget roles
+	msInterval = 3000;
 
 	if (!document.getElementById('ws-bm-aria-matrices-lnk')){
 		var s = document.createElement('span');
@@ -20,7 +23,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 		document.body.appendChild(s);
 	}
 
-	var WSBMInit = function(attrs, isNested, check, loaded){
+	var WSBMInit = function(isTop, attrs, isNested, check, loaded){
 		attrs
 			= 'aria-disabled,aria-readonly,aria-haspopup,aria-orientation,aria-label,aria-labelledby,aria-describedby,aria-pressed,aria-checked,aria-valuemin,aria-valuemax,aria-valuenow,aria-valuetext,aria-controls,aria-autocomplete,aria-expanded,aria-owns,aria-activedescendant,aria-posinset,aria-setsize,aria-level,role'.split(
 				',');
@@ -36,63 +39,65 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 		};
 
 		check = function(nodes, obj, frames, focused, pNode, focusHidden){
-			if (loaded && loaded.init){
-				if (!loaded.comboboxListbox && !document.getElementById('ws-visual-aria-7')
-					&& document.querySelectorAll('*[role="combobox"], *[role="listbox"], *[role="option"]').length){
-					loaded.comboboxListbox = true;
-					loadCSS('7combobox-listbox.css', '7');
+			if (isTop){
+				if (loaded && loaded.init){
+					if (!loaded.comboboxListbox && !document.getElementById('ws-visual-aria-7')
+						&& document.querySelectorAll('*[role="combobox"], *[role="listbox"], *[role="option"]').length){
+						loaded.comboboxListbox = true;
+						loadCSS('7combobox-listbox.css', '7');
+					}
+
+					if (!loaded.menuMenubar
+						&& !document.getElementById('ws-visual-aria-8')
+							&& document.querySelectorAll(
+								'*[role="menu"], *[role="menubar"], *[role="menuitem"], *[role="menuitemradio"], *[role="menuitemcheckbox"]').length)
+						{
+						loaded.menuMenubar = true;
+						loadCSS('8menu-menubar.css', '8');
+					}
+
+					if (!loaded.radiogroup && !document.getElementById('ws-visual-aria-9')
+						&& document.querySelectorAll('*[role="radiogroup"], *[role="radio"]').length){
+						loaded.radiogroup = true;
+						loadCSS('9radiogroup.css', '9');
+					}
+
+					if (!loaded.tablist && !document.getElementById('ws-visual-aria-10')
+						&& document.querySelectorAll('*[role="tablist"], *[role="tab"], *[role="tabpanel"]').length){
+						loaded.tablist = true;
+						loadCSS('10tablist.css', '10');
+					}
+
+					if (!loaded.tree && !document.getElementById('ws-visual-aria-11')
+						&& document.querySelectorAll('*[role="tree"], *[role="treeitem"]').length){
+						loaded.tree = true;
+						loadCSS('11tree.css', '11');
+					}
+
+					if (!loaded.treegridGridTable
+						&& !document.getElementById('ws-visual-aria-12')
+							&& document.querySelectorAll(
+								'*[role="treegrid"], *[role="grid"], *[role="table"], *[role="rowgroup"], *[role="row"], *[role="columnheader"], *[role="rowheader"], *[role="gridcell"], *[role="cell"]').length)
+						{
+						loaded.treegridGridTable = true;
+						loadCSS('12treegrid-grid-table.css', '12');
+					}
 				}
 
-				if (!loaded.menuMenubar
-					&& !document.getElementById('ws-visual-aria-8')
-						&& document.querySelectorAll(
-							'*[role="menu"], *[role="menubar"], *[role="menuitem"], *[role="menuitemradio"], *[role="menuitemcheckbox"]').length)
-					{
-					loaded.menuMenubar = true;
-					loadCSS('8menu-menubar.css', '8');
+				if (loaded && !loaded.init){
+					loaded.init = true;
+					loadCSS('1roles.css', '1');
+					loaded.landmarks = true;
+					loadCSS('2landmarks.css', '2');
+					loaded.structural = true;
+					loadCSS('3structural.css', '3');
+					loaded.dialogs = true;
+					loadCSS('4dialogs.css', '4');
+					loaded.liveRegions = true;
+					loadCSS('5live-regions.css', '5');
+					loaded.simpleWidgets = true;
+					loadCSS('6simple-widgets.css', '6');
 				}
-
-				if (!loaded.radiogroup && !document.getElementById('ws-visual-aria-9')
-					&& document.querySelectorAll('*[role="radiogroup"], *[role="radio"]').length){
-					loaded.radiogroup = true;
-					loadCSS('9radiogroup.css', '9');
-				}
-
-				if (!loaded.tablist && !document.getElementById('ws-visual-aria-10')
-					&& document.querySelectorAll('*[role="tablist"], *[role="tab"], *[role="tabpanel"]').length){
-					loaded.tablist = true;
-					loadCSS('10tablist.css', '10');
-				}
-
-				if (!loaded.tree && !document.getElementById('ws-visual-aria-11')
-					&& document.querySelectorAll('*[role="tree"], *[role="treeitem"]').length){
-					loaded.tree = true;
-					loadCSS('11tree.css', '11');
-				}
-
-				if (!loaded.treegridGridTable
-					&& !document.getElementById('ws-visual-aria-12')
-						&& document.querySelectorAll(
-							'*[role="treegrid"], *[role="grid"], *[role="table"], *[role="rowgroup"], *[role="row"], *[role="columnheader"], *[role="rowheader"], *[role="gridcell"], *[role="cell"]').length)
-					{
-					loaded.treegridGridTable = true;
-					loadCSS('12treegrid-grid-table.css', '12');
-				}
-			}
-
-			if (loaded && !loaded.init){
-				loaded.init = true;
-				loadCSS('1roles.css', '1');
-				loaded.landmarks = true;
-				loadCSS('2landmarks.css', '2');
-				loaded.structural = true;
-				loadCSS('3structural.css', '3');
-				loaded.dialogs = true;
-				loadCSS('4dialogs.css', '4');
-				loaded.liveRegions = true;
-				loadCSS('5live-regions.css', '5');
-				loaded.simpleWidgets = true;
-				loadCSS('6simple-widgets.css', '6');
 			}
 
 			nodes = document.querySelectorAll(
@@ -157,7 +162,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				catch (e){}
 			}
 
-			setTimeout(check, 3000);
+			setTimeout(check, msInterval);
 		};
 
 		var checkNames = function(){
@@ -343,7 +348,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 		setTimeout(checkNames, 5000);
 
-		if (!useOffline){
+		if (isTop && !useOffline){
 			loaded =
 							{
 							init: false,
@@ -373,7 +378,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 		check();
 	};
 
-	WSBMInit();
+	WSBMInit(true);
 
 	if (!document.getElementById('ws-bm-aria-matrices-lnk')){
 		var m = document.createElement('span');
