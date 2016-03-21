@@ -623,35 +623,46 @@ div.demo-block {
 
 #bookmarkletBtn:hover {text-decoration: none; color: #FFF; background: #133639;}
 
-
 .purpleTltp {
     background-color: white;
     color: purple;
+padding: 1px;
+font-weight: 900;
 }
 
 .blueTltp {
     background-color: white;
     color: blue;
+padding: 1px;
+font-weight: 900;
 }
 
 .redTltp {
     background-color: #FFFFE5;
     color: red;
+padding: 1px;
+font-weight: 900;
 }
 
 .fuchsiaTltp {
     background-color: white;
     color: fuchsia;
+padding: 1px;
+font-weight: 900;
 }
 
 .orangeTltp {
     background-color: black;
     color: orange;
+padding: 1px;
+font-weight: 900;
 }
 
 .greenTltp {
     background-color: white;
     color: green;
+padding: 1px;
+font-weight: 900;
 }
 
 dl.calculation {
