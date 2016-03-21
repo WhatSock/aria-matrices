@@ -14,7 +14,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Application (WARNING: Changes screen reader behavior, use with caution) ';
 }
 *[role="application"][aria-label]:before {
@@ -23,7 +23,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Application (WARNING: Changes screen reader behavior, use with caution) aria-label=' attr(aria-label) ' ';
 }
 *[role="application"][aria-labelledby]:before {
@@ -32,7 +32,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Application (WARNING: Changes screen reader behavior, use with caution) aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -50,7 +50,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Banner ';
 }
 *[role="banner"][aria-label]:before {
@@ -59,7 +59,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Banner aria-label=' attr(aria-label) ' ';
 }
 *[role="banner"][aria-labelledby]:before {
@@ -68,7 +68,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Banner aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -86,7 +86,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Complementary ';
 }
 *[role="complementary"][aria-label]:before {
@@ -95,7 +95,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Complementary aria-label=' attr(aria-label) ' ';
 }
 *[role="complementary"][aria-labelledby]:before {
@@ -104,7 +104,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Complementary aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -122,7 +122,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Contentinfo ';
 }
 *[role="contentinfo"][aria-label]:before {
@@ -131,7 +131,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Contentinfo aria-label=' attr(aria-label) ' ';
 }
 *[role="contentinfo"][aria-labelledby]:before {
@@ -140,7 +140,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Contentinfo aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -158,7 +158,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Form ';
 }
 *[role="form"][aria-label]:before {
@@ -167,7 +167,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Form aria-label=' attr(aria-label) ' ';
 }
 *[role="form"][aria-labelledby]:before {
@@ -176,7 +176,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Form aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -194,7 +194,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Main ';
 }
 *[role="main"][aria-label]:before {
@@ -203,7 +203,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Main aria-label=' attr(aria-label) ' ';
 }
 *[role="main"][aria-labelledby]:before {
@@ -212,7 +212,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Main aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -230,7 +230,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Navigation ';
 }
 *[role="navigation"][aria-label]:before {
@@ -239,7 +239,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Navigation aria-label=' attr(aria-label) ' ';
 }
 *[role="navigation"][aria-labelledby]:before {
@@ -248,7 +248,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Navigation aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -266,7 +266,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) (landmark) [ARIA] Search ';
 }
 *[role="search"][aria-label]:before {
@@ -275,7 +275,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Search aria-label=' attr(aria-label) ' ';
 }
 *[role="search"][aria-labelledby]:before {
@@ -284,7 +284,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (landmark) [ARIA] Search aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
@@ -303,7 +303,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: #FFFFE5;
 color: red;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' (unlabelled) [ARIA] Region (requires a label) ';
 }
 *[role="region"][aria-label], *[role="region"][aria-labelledby] {
@@ -315,7 +315,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] Region aria-label=' attr(aria-label) ' ';
 }
 *[role="region"][aria-labelledby]:before {
@@ -324,6 +324,6 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: purple;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] Region aria-labelledby=' attr(aria-labelledby) ' ';
 }

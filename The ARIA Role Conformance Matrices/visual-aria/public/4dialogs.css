@@ -15,7 +15,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: #FFFFE5;
 color: red;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] Alertdialog (missing required attributes) ';
 }
 *[role="alertdialog"][aria-label][aria-describedby], *[role="alertdialog"][aria-labelledby][aria-describedby] {
@@ -27,7 +27,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: green;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] (non-modal) Alertdialog (ensure focus is set to an element within the Alertdialog) ';
 }
 *[role="alertdialog"][aria-label][aria-describedby][aria-modal="true"]:before, *[role="alertdialog"][aria-labelledby][aria-describedby][aria-modal="true"]:before {
@@ -36,7 +36,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: green;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] (modal) Alertdialog (ensure focus is set to an internal element and confined within the Alertdialog) ';
 }
 
@@ -56,7 +56,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: #FFFFE5;
 color: red;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] Dialog (missing required attributes) ';
 }
 *[role="dialog"][aria-label][aria-describedby], *[role="dialog"][aria-labelledby][aria-describedby] {
@@ -68,7 +68,7 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: green;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] (non-modal) Dialog (ensure focus is set to an element within the Dialog) ';
 }
 *[role="dialog"][aria-label][aria-describedby][aria-modal="true"]:before, *[role="dialog"][aria-labelledby][aria-describedby][aria-modal="true"]:before {
@@ -77,6 +77,6 @@ height: auto; width: auto;
 position: relative; padding: 1px 0;
 background-color: white;
 color: green;
-font-size: .9em; font-weight: 900;
+font-size: .9rem; font-weight: 900;
 content: ' [ARIA] (modal) Dialog (ensure focus is set to an internal element and confined within the Dialog) ';
 }
