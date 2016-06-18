@@ -136,15 +136,18 @@ p, li, dt, dd {font-size: 0.9em; line-height: 1.45;}
 
 li li {font-size: 100%;}
 
-a, a:link, a:visited {
-	text-decoration: none;
+
+a, a:link {
 	color: #000;
-	background: #F2D3A1;
+	background: #FCE7C7;
 }
+
+a:visited {color: #404040; background: transparent;}
 a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 	background: transparent;
 }
+
 
 *:focus {
 	color: #000;
@@ -369,6 +372,7 @@ nav button, nav a, nav a:link, nav a:visited  {
 	display: block;
 	font: bold 1.2em Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
+	text-decoration: none;
 	color: #FFF;
 	background: #0A1C1D;
 	padding: 0.8em 0.5em;
@@ -392,17 +396,27 @@ nav li.active button, nav li.active a, nav li.active a:link, nav li.active a:vis
 #toc {text-align: right;}
 
 	#toc dt a, #toc dt a:link, #toc dt a:visited {
+		text-decoration: none;
 		color: #000;
-		background: #E2A037;
-		padding: 0.3em 0.5em;
+		background: #E2A037 url(../img/sprite.svg) right 7px no-repeat;
+		padding: 0.3em 40px 0.3em 0.5em;
 		border-radius: 0.3em;
 	}
-	#toc dt a::after {content: " \23F7";}
-	#toc dt a:hover {text-decoration: none; color: #FFF; background: #133639;}
+	#toc dt a:hover {
+		color: #FFF; 
+		background-color: #133639;
+		background-position: right -302px;
+	}
+	#toc dt a[aria-expanded=true], #toc dt a[aria-expanded=true]:link, #toc dt a[aria-expanded=true]:visited {
+		background-position: right -152px;
+	}
+	#toc dt a[aria-expanded=true]:hover {
+		background-position: right -461px;
+	}
 
 	#tocDD {
 		text-align: left;
-		background: #F2D3A1;
+		background: #FCE7C7;
 		margin-top: 0.5rem;
 	}
 	#tocDD ul {padding: 1rem; margin: 0 1rem 0;}
