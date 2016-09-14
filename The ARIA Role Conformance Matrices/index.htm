@@ -2762,7 +2762,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                             <ul>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-autocomplete">aria-autocomplete</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-expanded">aria-expanded</a></li>
-                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-owns">aria-owns</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-controls">aria-controls</a></li>
                                             </ul>
                                         </td>
                                         <td title="Optional Attributes" class="cell">
@@ -2795,7 +2795,7 @@ the text of which should be programmatically updated every time the Spinbutton c
 	
 	<p>When a Combobox is expanded, aria-expanded must be set to "true" on the element that includes role="combobox", or set to "false" when collapsed.</p>
 	
-	<p>The aria-owns attribute should be set on the element that includes role="combobox", and should reference the ID of the container element that includes role="listbox".</p>
+	<p>The aria-controls attribute must be set on the element that includes role="combobox", and should reference the ID of the container element that includes role="listbox". This is a change from ARIA 1.0 where aria-owns was referenced instead, yet this caused accessibility issues resulting from the reordering of the accessibility tree when used in practice. The use of aria-controls solves this issue however.</p>
 	
 	<p>If aria-autocomplete is set to "list" on the element that includes role="combobox", and the Combobox element retains focus, the focusable element must be the same that includes the role="combobox" attribute, and <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#focus_activedescendant">aria-activedescendant managed focus</a> must be used to reference the ID of the selected role="option" elements without moving focus.</p>
 	
