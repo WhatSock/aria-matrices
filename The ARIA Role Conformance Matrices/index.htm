@@ -586,6 +586,7 @@
 											<p>Definition is a definition of a term or concept.</p>
 											<p>The role="definition" element must include an aria-labelledby attribute 
 											that references the ID of the term or concept being defined.</p>
+											<p>The term element that is referenced by aria-labelledby must not be an active element, and must include <a href="#term">role="term"</a>.</p>
                                         </td>
                                     </tr>
                                 </table>
@@ -707,8 +708,136 @@
                                     </tr>
                                 </table>
                             </div>
+                            <div id="feed" class="hd" tabindex="-1">
+                                <h4><span>1.2.5: Feed Role [ARIA 1.1]</span></h4>
+                            </div>
+                            <div class="intro tal">
+                                <table aria-label="feed" class="reference">
+                                    <tr>
+                                        <th scope="col">
+                                            <span><a>Role</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Required Attributes</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Optional Attributes</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Requires Scripting</a></span>
+                                        </th>
+                                        <th class="notes" scope="col">
+                                            <span><a>Implementation Notes</a></span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td title="Role" class="cell">
+                                            <!-- Role --><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#feed">feed</a>
+                                        </td>
+                                        <td title="Required Attributes" class="cell">
+                                            <!-- Required Attributes -->
+                                        </td>
+                                        <td title="Optional Attributes" class="cell">
+                                            <!-- Optional Attributes -->
+                                            <ul>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">aria-labelledby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">aria-label</a></li>
+                                            </ul>
+                                        </td>
+                                        <td title="Requires Scripting" class="cell">
+                                            <!-- Requires Scripting --><a>Yes</a>
+                                        </td>
+                                        <td title="Implementation Notes" class="notes">
+                                            <!-- Implementation Notes -->
+											<p>Directory is a list of references to members of a group, such as a static 
+											table of contents.</p>
+											<p>The Feed role is a scrollable list of articles where scrolling may cause articles to be added to or removed from either end of the list, and must include child elements with role="article".</p>
+
+											<p>The first level children of role="feed" (those with an implicit or explicit role) must be role="article".</p>
+
+											<p>When dynamic Article containers are added to a Feed, they must be either prepended or appended to the beginning or end of the Feed container element.</p>
+
+											<p>The container with role="feed" should not be focusable.</p>
+
+											<p>To ensure accessibility on touch screen devices, a button should be placed at the end of the Feed so that new Articles can be dynamically added when activated, after which focus should be set on the newly added Article in the Feed.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td title="Role" class="cell">
+                                            <!-- Role --><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#article">article</a>
+                                        </td>
+                                        <td title="Required Attributes" class="cell">
+                                            <!-- Required Attributes -->
+                                        </td>
+                                        <td title="Optional Attributes" class="cell">
+                                            <!-- Optional Attributes -->
+                                            <ul>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">aria-labelledby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">aria-label</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
+                                            </ul>
+                                        </td>
+                                        <td title="Requires Scripting" class="cell">
+                                            <!-- Requires Scripting --><a>Yes</a>
+                                        </td>
+                                        <td title="Implementation Notes" class="notes">
+                                            <!-- Implementation Notes -->
+											<p>Article is a single dynamic article in a Feed.</p>
+											<p>Article elements are required as first level children (those with an implicit or explicit role) of role="feed".</p>
+											<p>All elements with role="article" should be focusable, and optionally navigable using the arrow keys.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="figure" class="hd" tabindex="-1">
+                                <h4><span>1.2.6: Figure Role [ARIA 1.1]</span></h4>
+                            </div>
+                            <div class="intro tal">
+                                <table aria-label="figure" class="reference">
+                                    <tr>
+                                        <th scope="col">
+                                            <span><a>Role</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Required Attributes</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Optional Attributes</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Requires Scripting</a></span>
+                                        </th>
+                                        <th class="notes" scope="col">
+                                            <span><a>Implementation Notes</a></span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td title="Role" class="cell">
+                                            <!-- Role --><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#figure">figure</a>
+                                        </td>
+                                        <td title="Required Attributes" class="cell">
+                                            <!-- Required Attributes -->
+                                        </td>
+                                        <td title="Optional Attributes" class="cell">
+                                            <!-- Optional Attributes -->
+                                            <ul>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">aria-labelledby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">aria-label</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
+                                            </ul>
+                                        </td>
+                                        <td title="Requires Scripting" class="cell">
+                                            <!-- Requires Scripting --><a>No</a>
+                                        </td>
+                                        <td title="Implementation Notes" class="notes">
+                                            <!-- Implementation Notes -->
+											<p>Figure is a container for graphical representations such as charts, maps, diagrams, collections of images, code snippets, or example text.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                             <div id="heading" class="hd" tabindex="-1">
-                                <h4><span>1.2.5: Heading Role</span></h4>
+                                <h4><span>1.2.7: Heading Role</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="heading" class="reference">
@@ -757,7 +886,7 @@
                                 </table>
                             </div>
                             <div id="img" class="hd" tabindex="-1">
-                                <h4><span>1.2.6: Img Role</span></h4>
+                                <h4><span>1.2.8: Img Role</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="img" class="reference">
@@ -798,6 +927,7 @@
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
 											<p>Img is a container for a collection of elements that form an image.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
 											<p>An element that includes role="img" must have an explicit label in 
 											accordance with the 
 											<a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)
@@ -807,7 +937,7 @@
                                 </table>
                             </div>
                             <div id="list" class="hd" tabindex="-1">
-                                <h4><span>1.2.7: List Role</span></h4>
+                                <h4><span>1.2.9: List Role</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="list" class="reference">
@@ -875,7 +1005,7 @@
                                 </table>
                             </div>
                             <div id="math" class="hd" tabindex="-1">
-                                <h4><span>1.2.8: Math Role</span></h4>
+                                <h4><span>1.2.10: Math Role</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="math" class="reference">
@@ -916,6 +1046,7 @@
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
 											<p>Math is content that represents a mathematical expression.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
 											<p>An element that includes role="math" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)
 	</p>
                                         </td>
@@ -923,7 +1054,7 @@
                                 </table>
                             </div>
                             <div id="note" class="hd" tabindex="-1">
-                                <h4><span>1.2.9: Note Role</span></h4>
+                                <h4><span>1.2.11: Note Role</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="note" class="reference">
@@ -970,7 +1101,7 @@
                                 </table>
                             </div>
                             <div id="separator" class="hd" tabindex="-1">
-                                <h4><span>1.2.10: Separator Role</span></h4>
+                                <h4><span>1.2.12: Separator Role</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="separator" class="reference">
@@ -1010,6 +1141,7 @@
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
 											<p>Separator is a divider that separates and distinguishes sections of content.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
 											<p>If not set to "vertical", elements with the role Separator have an implicit 
 											aria-orientation value of "horizontal".</p>
                                         </td>
@@ -1017,7 +1149,7 @@
                                 </table>
                             </div>
                             <div id="table" class="hd" tabindex="-1">
-                                <h4><span>1.2.11: Table Role [ARIA 1.1]</span></h4>
+                                <h4><span>1.2.13: Table Role [ARIA 1.1]</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="table" class="reference">
@@ -1115,6 +1247,7 @@
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-owns">aria-owns</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-rowindex">aria-rowindex</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-rowspan">aria-rowspan</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-expanded">aria-expanded</a></li>
                                             </ul>
                                         </td>
                                         <td title="Requires Scripting" class="cell">
@@ -1215,8 +1348,51 @@
                                     </tr>
                                 </table>
                             </div>
+                            <div id="term" class="hd" tabindex="-1">
+                                <h4><span>1.2.14: Term Role [ARIA 1.1]</span></h4>
+                            </div>
+                            <div class="intro tal">
+                                <table aria-label="term" class="reference">
+                                    <tr>
+                                        <th scope="col">
+                                            <span><a>Role</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Required Attributes</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Optional Attributes</a></span>
+                                        </th>
+                                        <th scope="col">
+                                            <span><a>Requires Scripting</a></span>
+                                        </th>
+                                        <th class="notes" scope="col">
+                                            <span><a>Implementation Notes</a></span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td title="Role" class="cell">
+                                            <!-- Role --><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#term">term</a>
+                                        </td>
+                                        <td title="Required Attributes" class="cell">
+                                            <!-- Required Attributes -->
+                                        </td>
+                                        <td title="Optional Attributes" class="cell">
+                                            <!-- Optional Attributes -->
+                                        </td>
+                                        <td title="Requires Scripting" class="cell">
+                                            <!-- Requires Scripting --><a>No</a>
+                                        </td>
+                                        <td title="Implementation Notes" class="notes">
+                                            <!-- Implementation Notes -->
+											<p>Term is a keyword or phrase that is referenced by a <a href="#definition">Definition</a>.</p>
+											<p>The role="term" element must not be a focusable active element, though it may contain a focusable active element.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                             <div id="toolbar" class="hd" tabindex="-1">
-                                <h4><span>1.2.12: Toolbar Role</span></h4>
+                                <h4><span>1.2.15: Toolbar Role</span></h4>
                             </div>
                             <div class="intro tal">
                                 <table aria-label="toolbar" class="reference">
@@ -1895,6 +2071,7 @@
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-disabled">aria-disabled</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">aria-haspopup</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-expanded">aria-expanded</a></li>
                                             </ul>
                                         </td>
                                         <td title="Requires Scripting" class="cell">
@@ -1904,6 +2081,8 @@
                                             <!-- Implementation Notes -->
 											<p>Button is an input that allows for user-triggered actions when clicked or pressed.</p>
 	
+	<p>Important: This role must not include any embedded active elements.</p>
+
 	<p>An element that includes role="button" must have an explicit label 
 	in accordance with the 
 	<a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>  
@@ -1985,6 +2164,7 @@
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-disabled">aria-disabled</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">aria-haspopup</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-expanded">aria-expanded</a></li>
                                             </ul>
                                         </td>
                                         <td title="Requires Scripting" class="cell">
@@ -1994,6 +2174,8 @@
                                             <!-- Implementation Notes -->
 											<p>Checkbox is a checkable input that has three possible values: "true", "false", or "mixed".</p>
 	
+	<p>Important: This role must not include any embedded active elements.</p>
+
 	<p>An element that includes role="checkbox" must have an explicit 
 	label in accordance with the 
 	<a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>  
@@ -2068,6 +2250,7 @@
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-disabled">aria-disabled</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">aria-haspopup</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-expanded">aria-expanded</a></li>
                                             </ul>
                                         </td>
                                         <td title="Requires Scripting" class="cell">
@@ -2154,6 +2337,8 @@
 											<p>Progressbar is an element that displays the progress 
 											status for tasks that take a long time.</p>
 	
+	<p>Important: This role must not include any embedded active elements.</p>
+
 	<p>Elements with the role Progressbar have an implicit aria-readonly value of "true".</p>
 	
 	<p>An element that includes role="progressbar" should also include the 
@@ -2305,6 +2490,8 @@
 											content within a viewing area, regardless of whether the 
 											content is fully displayed within the viewing area.</p>
 	
+	<p>Important: This role must not include any embedded active elements.</p>
+
 	<p>Elements with the role Scrollbar have an implicit aria-orientation value of "vertical".</p>
 	
 	<p>An element that includes role="scrollbar" must have an explicit label 
@@ -2398,6 +2585,8 @@
                                             <!-- Implementation Notes -->
 											<p>Slider is a user input where the user selects a value from within a given range.</p>
 	
+	<p>Important: This role must not include any embedded active elements.</p>
+
 	<p>Elements with the role Slider have an implicit aria-orientation value of "horizontal".</p>
 	
 	<p>An element that includes role="slider" must have an explicit label in accordance 
@@ -2579,6 +2768,8 @@ the text of which should be programmatically updated every time the Spinbutton c
                                             <!-- Implementation Notes -->
 											<p>Switch is a type of Checkbox that represents on/off values, as opposed to checked/unchecked values.</p>
 	
+	<p>Important: This role must not include any embedded active elements.</p>
+
 	<p>An element that includes role="switch" must have an explicit 
 	label in accordance with the 
 	<a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative 
@@ -2776,6 +2967,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-required">aria-required</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-placeholder">aria-placeholder</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">aria-haspopup</a></li>
                                             </ul>
                                         </td>
                                         <td title="Requires Scripting" class="cell">
@@ -2785,6 +2977,8 @@ the text of which should be programmatically updated every time the Spinbutton c
                                             <!-- Implementation Notes -->
 											<p>Combobox is a presentation of a select; usually similar to a Textbox where users can type ahead to select an option, or type to enter arbitrary text as a new item in the list.</p>
 	
+											<p>Important: In ARIA 1.1 a new design pattern was added for Combobox involving the use of role="combobox" as a parent of the editable input field, however at present the only accessible implementation that works accessibly across platforms and assistive technologies is the 1.0 design pattern as documented below, with one exception regarding the use of aria-controls instead of aria-owns. Also, even when support for the 1.1 design pattern is supported in the future, the following 1.0 design pattern will continue to work accessibly regardless.</p>
+
 	<p>An element that includes role="combobox" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
 	
 	<p>If the element that includes role="combobox" does not consist of a native active element, it must be made <a target="_blank" href="http://www.w3.org/TR/WCAG20-TECHS/SCR29.html#SCR29-description">keyboard accessible</a>.</p>
@@ -2799,6 +2993,8 @@ the text of which should be programmatically updated every time the Spinbutton c
 	
 	<p>If aria-autocomplete is set to "list" on the element that includes role="combobox", and the Combobox element retains focus, the focusable element must be the same that includes the role="combobox" attribute, and <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#focus_activedescendant">aria-activedescendant managed focus</a> must be used to reference the ID of the selected role="option" elements without moving focus.</p>
 	
+	<p>Note: In ARIA 1.1, support was added so that when aria-activedescendant is used to manage accessible focus from the input field, it may also reference the IDs of elements with the role="gridcell", role="treeitem", as well as role="option" when programmatically controlling widgets such as a <a href="#grid">Grid</a> or <a href="#tree">Tree</a> as well as a <a href="#listbox">Listbox</a>. Three token values for aria-haspopup are now available for this purpose in ARIA 1.1, aria-haspopup="grid", aria-haspopup="tree", and aria-haspopup="listbox", which should be set on the same element that includes aria-activedescendant to convey the type of widget that is being controlled.</p>
+
 	<p>If aria-autocomplete is set to "inline" or "both" on the element that includes role="combobox", and the value of the Combobox field is updated when the Up/Down arrow keys are pressed, the aria-activedescendant attribute should not be included.</p>
 	
 	<p>Progressive enhancement and responsive design considerations:</p>
@@ -2885,6 +3081,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Option is a selectable item in a Listbox.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>Option is a structural equivalent to an HTML option element.</p>
                                             <p>An element that includes role="option" must have an explicit 
                                                 label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative 
@@ -3035,6 +3232,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-disabled">aria-disabled</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">aria-haspopup</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-expanded">aria-expanded</a></li>
                                             </ul>
                                         </td>
                                         <td title="Requires Scripting" class="cell">
@@ -3289,6 +3487,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Option is a selectable item in a Listbox.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>Option is a structural equivalent to an HTML option element.</p>
                                             <p>An element that includes role="option" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Listbox child element that includes role="option", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
@@ -3395,6 +3594,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Menuitem is an option in a set of choices contained by a Menu.</p>
+	<p>Important: This role must not include any embedded active elements besides those with role=menu, role=menubar, role=menuitem, role=menuitemcheckbox, or role=menuitemradio.</p>
                                             <p>An element that includes role="menuitem" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Menu child element that includes role="menuitem", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Menuitem is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="menuitem".</p>
@@ -3429,6 +3629,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                             <!-- Implementation Notes -->
                                             <p>Menuitemcheckbox is a Menuitem with a checkable state whose 
                                                 possible values are "true", "false", or "mixed".</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>An element that includes role="menuitemcheckbox" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Menu child element that includes role="menuitemcheckbox", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Menuitemcheckbox is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="menuitemcheckbox".</p>
@@ -3462,6 +3663,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Menuitemradio is a checkable Menuitem in a set of elements with the same role, only one of which can be checked at a time.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>An element that includes role="menuitemradio" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Menu child element that includes role="menuitemradio", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Menuitemradio is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="menuitemradio".</p>
@@ -3490,6 +3692,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Separator is a visual divider that separates and distinguishes groups of Menuitems.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>Elements with the role Separator have an implicit aria-orientation value of "horizontal".</p>
                                             <p>If a Menu includes a Separator role, the Separator ID should not be referenced by aria-owns or aria-activedescendant, nor should it be made focusable using roving tabindex.</p>
                                         </td>
@@ -3576,6 +3779,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Menuitem is an option in a set of choices contained by a Menubar.</p>
+	<p>Important: This role must not include any embedded active elements besides those with role=menu, role=menubar, role=menuitem, role=menuitemcheckbox, or role=menuitemradio.</p>
                                             <p>An element that includes role="menuitem" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Menubar child element that includes role="menuitem", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Menuitem is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="menuitem".</p>
@@ -3609,6 +3813,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Menuitemcheckbox is a Menuitem with a checkable state whose possible values are "true", "false", or "mixed".</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>An element that includes role="menuitemcheckbox" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Menubar child element that includes role="menuitemcheckbox", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Menuitemcheckbox is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="menuitemcheckbox".</p>
@@ -3642,6 +3847,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Menuitemradio is a checkable Menuitem in a set of elements with the same role, only one of which can be checked at a time.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>An element that includes role="menuitemradio" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Menubar child element that includes role="menuitemradio", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Menuitemradio is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="menuitemradio".</p>
@@ -3670,6 +3876,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Separator is a visual divider that separates and distinguishes groups of Menuitems.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>Elements with the role Separator have an implicit aria-orientation value of "horizontal".</p>
                                             <p>If a Menubar includes a Separator role, the Separator ID should not be referenced by aria-owns or aria-activedescendant, nor should it be made focusable using roving tabindex.</p>
                                         </td>
@@ -3764,6 +3971,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Radio is a checkable input in a group of elements with the same role, only one of which can be checked at a time.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>Radio is a structural equivalent to an HTML input with type="radio" element.</p>
                                             <p>An element that includes role="radio" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Radiogroup child element that includes role="radio", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
@@ -3867,6 +4075,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Tab is a grouping label providing a mechanism for selecting the Tabpanel content that is to be rendered to the user.</p>
+	<p>Important: This role must not include any embedded active elements.</p>
                                             <p>An element that includes role="tab" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Tablist child element that includes role="tab", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Tab is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="tab".</p>
@@ -3999,6 +4208,7 @@ the text of which should be programmatically updated every time the Spinbutton c
                                         <td title="Implementation Notes" class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Treeitem is an option item of a Tree.</p>
+	<p>Important: This role must not include any embedded active elements besides role=group and role=treeitem.</p>
                                             <p>An element that includes role="treeitem" must have an explicit label in accordance with the <a target="_blank" href="http://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_te">Text Alternative Computation</a>. (Both aria-labelledby and aria-label should not be used at the same time)</p>
                                             <p>If focus is moved to the Tree child element that includes role="treeitem", then <a target="_blank" href="http://www.w3.org/TR/wai-aria-practices/#visualfocus">roving tabindex</a> must be used to manage focus.</p>
                                             <p>If the Treeitem is disabled, the aria-disabled attribute can be used to reflect the correct state of the element that includes role="treeitem".</p>
