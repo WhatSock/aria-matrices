@@ -224,9 +224,9 @@
 		                        <p> The value in exposing this calculation however, is to identify current bugs within browsers that need to be reported to their venders when discovered using Object Inspector for example, as well as bugs with Assistive 
 								Technologies that need to be reported to AT venders. This will lead 
 								to better interoperability support in the future.</p>
-		                        <p> It is important to note that Visual ARIA cannot access content 
+		                        <p> It is important to note that Visual ARIA will include content 
 								added using CSS pseudo elements as part of the estimated naming 
-								calculation, since there is no way to retrieve this information using JavaScript.</p>
+								calculation, but not for the element that includes the specific role. Otherwise the calculation would overwrite the status tooltips rendered by Visual ARIA.</p>
 		                    </div>
 		                    <div id="supported-active-element-types" class="hd" tabindex="-1">
 		                        <h3><span> Supported Active Element Types</span></h3>
