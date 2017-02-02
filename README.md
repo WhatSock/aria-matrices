@@ -1,7 +1,7 @@
 The ARIA Role Conformance Matrices
 ========
 
-Including the Visual ARIA Bookmarklet (revision 01/26/2017).
+Including the Visual ARIA Bookmarklet (revision 02/01/2017).
 Reference: http://whatsock.com/training/matrices/visual-aria.htm
 ( The interactive widget naming computation within Visual ARIA is geared to reflect the naming algorithm described at
 http://www.ssbbartgroup.com/blog/how-the-w3c-text-alternative-computation-works/ )
