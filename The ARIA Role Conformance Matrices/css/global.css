@@ -183,7 +183,7 @@ code.block {
 /* ----------------------------- PAGE STRUCTURE ------------------------------ */
 /* --------------------------------------------------------------------------- */
 
-#container {min-width: 800px;}
+/* #container {min-width: 800px;} */
 
 	#container.pageContainer {min-width: 0;}
 
