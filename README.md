@@ -1,7 +1,7 @@
 The ARIA Role Conformance Matrices
 ========
 
-Including the Visual ARIA Bookmarklet (revision 01/21/2016).
+Including the Visual ARIA Bookmarklet (revision 03/16/2017).
 Reference: http://whatsock.com/training/matrices/visual-aria.htm
 ( The interactive widget naming computation within Visual ARIA is geared to reflect the naming algorithm described at
 http://www.ssbbartgroup.com/blog/how-the-w3c-text-alternative-computation-works/ )
@@ -14,7 +14,11 @@ All ARIA roles and supporting attributes within the Roles, Required Attributes, 
 
 Distributed under the terms of the Open Source Initiative OSI - MIT License.
 
-Developed and maintained by: Bryan Garaventa
+Developed and maintained by: Bryan Garaventa https://www.linkedin.com/in/bgaraventa
+Or on Twitter at https://twitter.com/bryanegaraventa
+
+Note: All visual design by Angela Ricci (web designer and web front-end developer). You can check her work at her personal site http://gericci.me/
+Or you can follow her on Twitter at https://twitter.com/gericci
 
 Project home:
 -----

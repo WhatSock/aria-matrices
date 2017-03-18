@@ -1,7 +1,7 @@
 (function(){
 	$A.bind(window, 'load', function(){
 
-		$A.bind('div.topLink > a', 'click', function(ev){
+		$A.bind('p.topLink > a', 'click', function(ev){
 			$A.setFocus($A.query('h1')[0]);
 			ev.preventDefault();
 		});
@@ -18,19 +18,21 @@
 
 		// Generate permalinks
 		$A.query('h2, h3, h4, h5, h6', function(i, o){
-			var d = o.parentNode, a = $A.createEl('a',
-							{
-							href: (isVisualARIA
-								? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id,
-							title: 'Permalink: ' + (isVisualARIA
-								? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id,
-							'aria-label': 'Permalink: ' + (isVisualARIA
-								? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id
-							}, null, 'permalink');
+			if (!$A.hasClass(o, 'nopermalink')){
+				var d = o.parentNode, a = $A.createEl('a',
+								{
+								href: (isVisualARIA
+									? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id,
+								title: 'Permalink: ' + (isVisualARIA
+									? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id,
+								'aria-label': 'Permalink: ' + (isVisualARIA
+									? 'http://whatsock.com/training/matrices/visual-aria.htm#' : 'http://whatsock.com/training/matrices/#') + d.id
+								}, null, 'permalink');
 
-			a.innerHTML = '<span aria-hidden="true">#</span>';
-			d.appendChild(a);
-			$A.css(a, 'left', -(a.offsetWidth));
+				a.innerHTML = '<span aria-hidden="true">#</span>';
+				d.appendChild(a);
+				$A.css(a, 'left', -(a.offsetWidth));
+			}
 		});
 
 		if ($A.getEl('ph'))
@@ -69,8 +71,8 @@
 					ev.preventDefault();
 				});
 
-				/*if (i < (hs.length - 1))
-					ph.appendChild($A.createEl('span', null, null, null, document.createTextNode(' | ')));*/
+			/*if (i < (hs.length - 1))
+				ph.appendChild($A.createEl('span', null, null, null, document.createTextNode(' | ')));*/
 			}
 		}
 	}, generateTOC = function(){

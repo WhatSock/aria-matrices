@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title> The Visual ARIA Bookmarklet </title>
         <meta name="Author" content="Bryan Garaventa">
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+                <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link rel="stylesheet" type="text/css" href="css/global.css">
         <script type="text/javascript">
             var isVisualARIA = true;
@@ -23,7 +23,7 @@
                     <h1><span>The Visual ARIA Bookmarklet</span></h1>
                 </div>
                 <nav id="ph">
-                    <h2>Main navigation</h2>
+                    <h2 class="nopermalink">Main navigation</h2>
                 </nav>
             </header>
 			
@@ -31,9 +31,8 @@
                 <main>
                 	
 					<div class="introduction">
-						<p>Visual ARIA allows engineers, testers, educators, and students to physically observe 
-						ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, 
-						proper nesting and focus management, plus requisite and optional supporting attributes to aid in development. </p>
+						<p>Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.</p>
+						<p><a href="https://github.com/accdc/csun-2016" target="_blank">Download the 2016 CSUN Visual ARIA presentation</a> to view the offline source code for Visual ARIA, which includes important information that explains how it works, plus an example exercise for building a simulated radio button construct using Visual ARIA, or <a href="https://www.linkedin.com/pulse/printout-using-visual-aria-physically-see-learn-how-works-garaventa" target="_blank">view the published printout online</a>.</p>
                 	</div>
 					
 		            <div class="intro" id="bookmarklet">
@@ -222,14 +221,12 @@
 								of the naming calculation.</p>
 		                        <p> The Name and Description exposed by Visual ARIA strictly 
 								follows the <a href="http://www.w3.org/TR/accname-aam-1.1/" target="_blank">Alternative Text Calculation</a> for interactive elements, which may not exactly match what is represented by the Accessibility Tree within certain browsers, nor what is conveyed by Assistive Technologies.</p>
-		                        <p> The value in exposing this calculation however, is to identify current 
-								bugs within browsers that need to be reported to their venders when discovered 
-								using Object Inspector for example, as well as bugs with Assistive 
+		                        <p> The value in exposing this calculation however, is to identify current bugs within browsers that need to be reported to their venders when discovered using Object Inspector for example, as well as bugs with Assistive 
 								Technologies that need to be reported to AT venders. This will lead 
 								to better interoperability support in the future.</p>
-		                        <p> It is important to note that Visual ARIA cannot access content 
+		                        <p> It is important to note that Visual ARIA will include content 
 								added using CSS pseudo elements as part of the estimated naming 
-								calculation, since there is no way to retrieve this information using JavaScript.</p>
+								calculation, but not for the element that includes the specific role. Otherwise the calculation would overwrite the status tooltips rendered by Visual ARIA.</p>
 		                    </div>
 		                    <div id="supported-active-element-types" class="hd" tabindex="-1">
 		                        <h3><span> Supported Active Element Types</span></h3>
@@ -247,8 +244,7 @@
 		                        <h2><span> Notes and Limitations</span></h2>
 		                    </div>
 		                    <div class="intro tal">
-		                        <p><b> Since the HTML img, input, and progress elements cannot support the use of the :before and :after CSS pseudo elements, tooltip and border coloration may sometimes differ.
-		                                Additionally, when ARIA role usage is right aligned, the tooltip text may run on past the right border of the screen, which unfortunately cannot be helped at this time.</b></p>
+		                        <p><b> Since the HTML img, input, textarea, and progress elements cannot support the use of the :before and :after CSS pseudo elements, tooltip and border coloration may sometimes differ.</b></p>
 		                        <p> Please address any questions or support issues to the <a target="_blank" href="https://www.linkedin.com/grp/home?gid=4512178">Accessibility Innovators</a> LinkedIn group.</p>
 		                    </div>
 		                </article>
@@ -257,7 +253,7 @@
 			
 	            <aside>
 	                <section class="intro heading">
-	                    <h3>Related resources:</h3>
+	                    <h3 class="nopermalink">Related resources:</h3>
 						<div class="content">
 		                    <ul>
 		                        <li><a href="http://whatsock.com/training">The Accessibility Tree - A Training Guide for Advanced Web Development</a></li>
@@ -280,10 +276,7 @@
 			
 	        <footer>
 	        	<p class="topLink"><a href="#"><img src="img/up.png" title="Back to Top" alt="Back to Top" /></a></p>
-				<p class="copyright">&copy;<script type="text/javascript">
-	                        document.write(new Date().getFullYear());
-	                    </script> WhatSock, LLC;
-	                    All rights reserved.</p>
+				<p class="copyright">&copy;<script type="text/javascript">document.write(new Date().getFullYear());</script> WhatSock. All rights reserved.</p>
 	        </footer>
         </div>
     </body>
