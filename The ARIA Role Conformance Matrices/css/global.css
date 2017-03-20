@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------- 
+/*--------------------------------------------------------------------
          WHATSOCKC ACCESSIBILITY TREE TRAINING GUIDE
          2016
 -------------------------------------------------------------------- */
@@ -125,9 +125,9 @@ h3 {
 	margin: 1.5em 0 0.5em;
 }
 	aside section h3 {margin: 0 0 0.5em;}
-	
+
 h4 {
-	font: normal 1.3em/1.3 open_sansbold, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: normal 1.5em/1.3 open_sansbold, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #2E3135;
 	margin: 1.5em 0 0.5em;
 }
@@ -213,7 +213,7 @@ p.logo {
 	height: 100px;
     margin-left: -50px;
 }
-	
+
 	p.logo a {background: transparent;}
 	p.logo img {max-height: 100%;}
 
@@ -331,7 +331,7 @@ th {
 }
 	th a, tr td:nth-child(4) a {background: transparent;}
 	th a:hover, tr td:nth-child(4) a:hover {text-decoration: none;}
-	
+
 	th:nth-child(1) {width: 9em;}
 	th.notes {width: 40%;}
 	tr + tr {border-top: 1px solid #D0D0D0;}
@@ -346,7 +346,7 @@ td {
 	td+td {border-left: 1px solid #D0D0D0;}
 	td p {font-size: 100%; margin: 0;}
 	td p + p {margin-top: 0.8em;}
-	
+
 
 
 /* --------------------------------------------------------------------------- */
@@ -361,8 +361,8 @@ nav h2, aside h2 {
 	clip-path: inset(50%);
 	padding: 0;
 	border: 0;
-	height: 1px; 
-	width: 1px; 
+	height: 1px;
+	width: 1px;
 	overflow: hidden;
 	white-space: nowrap;
 }
@@ -398,20 +398,20 @@ nav li.active button, nav li.active a, nav li.active a:link, nav li.active a:vis
 	#toc dt a, #toc dt a:link, #toc dt a:visited {
 		text-decoration: none;
 		color: #000;
-		background: #E2A037 url(../img/sprite.svg) right 7px no-repeat;
+		background: #E2A037 url(../img/sprite.svg) right 4px no-repeat;
 		padding: 0.3em 40px 0.3em 0.5em;
 		border-radius: 0.3em;
 	}
 	#toc dt a:hover {
-		color: #FFF; 
+		color: #FFF;
 		background-color: #133639;
-		background-position: right -302px;
+		background-position: right -305px;
 	}
 	#toc dt a[aria-expanded=true], #toc dt a[aria-expanded=true]:link, #toc dt a[aria-expanded=true]:visited {
-		background-position: right -152px;
+		background-position: right -155px;
 	}
 	#toc dt a[aria-expanded=true]:hover {
-		background-position: right -461px;
+		background-position: right -464px;
 	}
 
 	#tocDD {
@@ -504,7 +504,7 @@ p.topLink {text-align: center; margin: 1rem 0;}
 	margin-top: 1rem;
 }
 	code + .heading {margin-top: 2rem;}
-	
+
 dl.api {
 	background: #FFF;
 	padding: 0.5rem 1rem 1rem;
@@ -556,7 +556,7 @@ div.demo .editLink, input[type=button] {
 }
 
 	div.demo .editLink:hover, input[type=button]:hover {text-decoration: none; border-radius: 0; box-shadow: none;}
-	
+
 	p.morphCtrl {text-align: right; margin: 1rem 0 0.5rem;}
 
 
@@ -592,10 +592,10 @@ p.guidance {
 
 div.demo-block {
 	clear: both;
-	padding: 1rem 0; 
+	padding: 1rem 0;
 	border-top: 2px dotted #63B7C2;
 }
-	
+
 	div.demo-block h3 {margin: 0 0 0.5em;}
 
 #demos h2 strong {
@@ -611,7 +611,7 @@ div.demo-block {
 	font-weight: normal;
 	text-transform: none;
 	background: transparent;
-	padding: 1em 5%; 
+	padding: 1em 5%;
 }
 #demos nav a:hover {color: #FFF; text-decoration: underline;}
 #demos nav a::before {content: "<  ";}
@@ -623,7 +623,7 @@ div.demo-block {
 
 #bookmarklet .content {padding-bottom: 1rem; border-bottom: 3px dotted #E2A037;}
 	#bookmarklet p + p {margin-top: 0.8em;}
-	
+
 	#bookmarklet textarea {width: 90%;}
 
 #bookmarkletBtn {
@@ -711,22 +711,22 @@ dl.calculation {
 		border: none;
 	}
 	 nav a:nth-child(2) {padding-left: 120px; margin-left: 5%;}
-	
+
 	div.demo-block .trigger {
 		float: right;
 		width: 35%;
 		text-align: right;
 		margin-top: -3.5rem;
 	}
-	
+
 	aside section div.content {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
 	}
-	
+
 	aside section div.notes {max-width: 35em; margin: 0.8rem 0 2rem 5%;}
-	
+
 	#bookmarklet {
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -738,29 +738,45 @@ dl.calculation {
 		flex: 1 1 70%;
 		margin-left: 5%;
 	}
-	
+
 	div.introduction {margin: 2rem 0 4rem;}
 	div.introduction p {font-size: 1.3em;}
 }
 
+/* !! MAXWIDTH */
+@media screen and (max-width: 960px) {
+	table.reference {}
+	table.reference ul {margin-left: 0.8em;}
+	table.reference th {display: none;}
+	table.reference tr {display: block; border: 1px solid #133639;}
+	table.reference tr + tr {margin-top: 1rem;}
+	table.reference td {display: block; border: none;}
+
+	table.reference td::before {display: block; font-size: 115%; font-weight: bold; margin-bottom: 1em;}
+	table.reference td:nth-child(1)::before {display: inline-block; content: "Role: "; margin: 0;}
+	table.reference td:nth-child(2)::before {content: "Required Attributes: ";}
+	table.reference td:nth-child(3)::before {content: "Optional Attributes: ";}
+	table.reference td:nth-child(4)::before {display: inline-block; content: "Requires Scripting: "; margin: 0;}
+	table.reference td:nth-child(5)::before {content: "Implementation Notes";}
+}
 
 @media screen and (min-width: 1000px) {
 	h1 {font-size: 5vw; line-height: 80px; text-align: left; padding: 0 0 0 120px; margin-left: 5%;}
 	p.logo {width: 80px; height: 80px; left: 5%; margin: 0;}
-	
+
 	main {min-height: 800px;}
-	
+
 	h2 {font-size: 4em;}
 	h3 {font-size: 2.5em;}
 	aside section h3 {font-size: 2em;}
-	
+
 	ul.menuList {display: block; background: transparent;}
 	ul.menuList li {margin-bottom: 0.5rem;}
-	
+
 	nav {text-align: left; margin-top: 3rem;}
-	
+
 	th, td {font-size: 1em;}
-	
+
 	footer {width: 98%; text-align: left; padding: 0 1%;}
 	footer ul {width: 60%; margin-top: -4rem;}
 	p.topLink {
@@ -778,7 +794,7 @@ dl.calculation {
 }
 
 
-@media screen and (min-width: 1600px) {	
+@media screen and (min-width: 1600px) {
 	nav {
 		-webkit-justify-content: flex-start;
 		-ms-justify-content: flex-start;
