@@ -28,6 +28,8 @@ http://whatsock.com/training/matrices
 Related projects:
 -----
 
+Visual ARIA: https://github.com/accdc/visual-aria
+
 The Accessibility Tree - A Training Guide for Advanced Web Development: https://github.com/accdc/training
 
 AccDC API
