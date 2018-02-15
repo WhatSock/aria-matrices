@@ -23,23 +23,5 @@ http://whatsock.com/training/matrices
 Related projects:
 -----
 
-Visual ARIA: https://github.com/accdc/visual-aria
-
-The Accessibility Tree - A Training Guide for Advanced Web Development: https://github.com/accdc/training
-
-AccDC API
-Standalone: https://github.com/accdc/accdc
-For jQuery: https://github.com/accdc/accdc-jquery
-For Dojo: https://github.com/accdc/accdc-dojo
-For MooTools: https://github.com/accdc/accdc-mootools
-
-AccDC Bootstrap
-Standalone: https://github.com/accdc/bootstrap
-For jQuery: https://github.com/accdc/bootstrap-jquery
-For Dojo: https://github.com/accdc/bootstrap-dojo
-For MooTools: https://github.com/accdc/bootstrap-mootools
-
-AccDC Technical Style Guide and Coding Arena
-For AccDC Standalone and jQuery: https://github.com/accdc/tsg
-For Dojo: https://github.com/accdc/tsg-dojo
-For MooTools: https://github.com/accdc/tsg-mootools
+* WhatSock Organization: https://github.com/whatsock
+* Visual ARIA: https://github.com/accdc/visual-aria
