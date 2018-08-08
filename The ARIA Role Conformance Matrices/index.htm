@@ -1617,12 +1617,12 @@
                                             <ul>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">aria-labelledby</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">aria-label</a></li>
-                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
                                             </ul>
                                         </td>
                                         <td  class="cell">
                                             <!-- Optional Attributes -->
                                             <ul>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-modal">aria-modal</a></li>
                                             </ul>
                                         </td>
@@ -1632,7 +1632,7 @@
                                         <td  class="notes">
                                             <!-- Implementation Notes -->
                                             <p>Alertdialog is a type of dialog that contains an alert message, where initial focus goes to an element within the dialog.</p>
-                                            <p>The container that includes role="alertdialog" must also include a valid label via aria-label or aria-labelledby, as well as aria-describedby to point to the message body for the Alertdialog text.</p>
+                                            <p>The container that includes role="alertdialog" must also include a valid label via aria-label or aria-labelledby, as well as aria-describedby to point to the message body for the Alertdialog text if you don't want the entire dialog content to be announced.</p>
 											<p>When rendered, programmatic focus should then be set to an appropriate element within the Alertdialog, and scripting should be used to confine the forward and reverse tab order within the Alertdialog container if modal.<p>If the Alertdialog is meant to be modal, aria-modal="true" must be set on the container that contains role="alertdialog".<p>An Alertdialog must include a keyboard accessible active element for closing it, which must also include an accessible label for non-sighted users.</p>
                                         </td>
                                     </tr>
@@ -1669,12 +1669,12 @@
                                             <ul>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">aria-labelledby</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-label">aria-label</a></li>
-                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
                                             </ul>
                                         </td>
                                         <td  class="cell">
                                             <!-- Optional Attributes -->
                                             <ul>
+                                                <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a></li>
                                                 <li><a target="_blank" href="http://www.w3.org/TR/wai-aria-1.1/#aria-modal">aria-modal</a></li>
                                             </ul>
                                         </td>
@@ -1687,7 +1687,7 @@
 
                                             <p>The container that includes role="dialog" must also
                                                 include a valid label via aria-label or aria-labelledby, as
-                                                well as aria-describedby to point to the message body for the Dialog text.</p>
+                                                well as aria-describedby to point to the message body for the Dialog text if you don't want the entire dialog content to be announced.</p>
                                             <p>When rendered, programmatic focus should then be set to an
                                                 appropriate element within the Dialog, and scripting should be
                                                 used to confine the forward and reverse tab order within the
