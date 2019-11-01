@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title> The Screen Curtain Bookmarklet </title>
-        <meta name="Author" content="Bryan Garaventa">
-                <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="css/global.css">
-    </head>
-    <body>
-        <div id="container" class="pageContainer">
-        	 <header>
-                <div class="menuLinks">
-                    <p class="logo"><a href="http://whatsock.com/"><img title="WhatSock : Changing the world one step at a time" alt="WhatSock : Changing the world one step at a time" src="img/whatsock.svg" /></a></p>
-                </div>
-                <div id="hd1" class="hd" tabindex="-1">
-                    <h1><span>The Screen Curtain Bookmarklet</span></h1>
-                </div>
-            </header>
-			
-            <div id="wrapper">
-                <main>
-                	
-					<div class="introduction">
-						<p>The Screen Curtain Bookmarklet allows engineers, testers, educators, and students to temporarily obscure web technologies while using screen readers in order to simulate the experience of using such technologies without sight.</p>
-						<p>This is analogous to the Screen Curtain mode provided on iPhone and iPad devices when using VoiceOver to experience the same. This bookmarklet should be used in combination with JAWS or NVDA on Windows when testing the non-sighted experience of typical screen reader users.</p>
-						<p>Additional resources:</p>
-                	                	<ul><li>
-                	                	                	                	<a href="http://whatsock.com/training/matrices">The ARIA Role Matrices</a>
-                	                	                	                	</li><li>
-                	                	                	                	<a href="http://whatsock.com/training/matrices/visual-aria.htm">The Visual ARIA Bookmarklet</a>
-                	                	                	                	</li><li>
-                	                	                	                	<a href="http://whatsock.com/training">The Accessibility Tree Training Guide</a>
-                	                	</li></ul>
-                	</div>
-		
-		            <div class="intro" id="bookmarklet">
 
-		                <p><a id="bookmarkletBtn" onclick="return false;" href="javascript:(function(){var a=document.createElement('script');a.type='text/javascript';a.src='https://gutterstar.bizland.com/whatsock/utilities/screen-curtain.js';document.head.appendChild(a)})()" role="button">
-		                	<span>Screen Curtain Bookmarklet</span></a></p>
-		                <div class="content">
-		                	<p><strong>Instructions:</strong> </p>
-							<p>Right click the <em>"Screen Curtain Bookmarklet"</em> button, or alternatively set focus to the button and press Shift+F10, then choose <strong>Add to 
-								Favorites</strong> or <strong>Add to Bookmarks</strong>. 
-								The Screen Curtain Bookmarklet can then 
-								be run upon any webpage by choosing the bookmarklet from within your 
-								Favorites or Bookmarks menu.</p>
-		                    <p>Alternatively, the bookmarklet can be added manually within browsers such 
-							as Chrome and Safari, by activating <strong>New</strong> within the Bookmark Manager, 
-							then pasting the below code into the URL field.</p>
-							
-		                    <p><textarea readonly title="Screen Curtain Bookmarklet" rows="7" cols="100">
+<head>
+    <meta charset="utf-8">
+    <title> The Screen Curtain Bookmarklet </title>
+    <meta name="Author" content="Bryan Garaventa">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+</head>
+
+<body>
+    <div id="container" class="pageContainer">
+        <header>
+            <div class="menuLinks">
+                <p class="logo"><a href="http://whatsock.com/"><img title="WhatSock : Changing the world one step at a time" alt="WhatSock : Changing the world one step at a time" src="img/whatsock.svg" /></a></p>
+            </div>
+            <div id="hd1" class="hd" tabindex="-1">
+                <h1><span>The Screen Curtain Bookmarklet</span></h1>
+            </div>
+        </header>
+
+        <div id="wrapper">
+            <main>
+
+                <div class="introduction">
+                    <p>The Screen Curtain Bookmarklet allows engineers, testers, educators, and students to temporarily obscure web technologies while using screen readers in order to simulate the experience of using such technologies without sight.</p>
+                    <p>This is analogous to the Screen Curtain mode provided on iPhone and iPad devices when using VoiceOver to experience the same. This bookmarklet should be used in combination with JAWS or NVDA on Windows when testing the non-sighted experience of typical screen reader users.</p>
+                    <p>Additional resources:</p>
+                    <ul>
+                        <li>
+                            <a href="http://whatsock.com/training/matrices">The ARIA Role Matrices</a>
+                        </li>
+                        <li>
+                            <a href="http://whatsock.com/training/matrices/visual-aria.htm">The Visual ARIA Bookmarklet</a>
+                        </li>
+                        <li>
+                            <a href="http://whatsock.com/training">The Accessibility Tree Training Guide</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="intro" id="bookmarklet">
+
+                    <p><a id="bookmarkletBtn" onclick="return false;" href="javascript:(function(){var a=document.createElement('script');a.type='text/javascript';a.src='https://gutterstar.bizland.com/whatsock/utilities/screen-curtain.js';document.head.appendChild(a)})()" role="button">
+                            <span>Screen Curtain Bookmarklet</span></a></p>
+                    <div class="content">
+                        <p><strong>Instructions:</strong> </p>
+                        <p>Right click the <em>"Screen Curtain Bookmarklet"</em> button, or alternatively set focus to the button and press Shift+F10, then choose <strong>Add to
+                                Favorites</strong> or <strong>Add to Bookmarks</strong>.
+                            The Screen Curtain Bookmarklet can then
+                            be run upon any webpage by choosing the bookmarklet from within your
+                            Favorites or Bookmarks menu.</p>
+                        <p>Alternatively, the bookmarklet can be added manually within browsers such
+                            as Chrome and Safari, by activating <strong>New</strong> within the Bookmark Manager,
+                            then pasting the below code into the URL field.</p>
+
+                        <p><textarea readonly title="Screen Curtain Bookmarklet" rows="7" cols="100">
   javascript:
   
   (function(){
@@ -59,38 +65,41 @@
 	document.head.appendChild(a)
   })()
 		                        </textarea>
-		                    </p>
-		            </div>
-					</div>
+                        </p>
+                    </div>
+                </div>
 
-				</main>
-			
-	            <aside>
-	                <section class="intro heading">
-	                    <h3 class="nopermalink">Related resources:</h3>
-						<div class="content">
-		                    <ul>
-		                        <li><a href="http://whatsock.com/training">The Accessibility Tree - A Training Guide for Advanced Web Development</a></li>
-		                        <li><a href="http://whatsock.com/training/matrices">The ARIA Role Conformance Matrices </a></li>
-		                    </ul>
-							<div class="notes">
-			                    <p>Visual ARIA is a cascading logic program written using CSS, which allows any sighted person to physically see the use of ARIA upon any public website, including all landmark and region roles, structural roles, live regions, pseudo interactive constructs, and all interactive widget roles mapped within ARIA 1.1.</p>
-			                    <p>Moreover, Visual ARIA provides real-time visual feedback as interactive widgets are focused to and updated, and will also convey when widget roles are not being interacted with properly due to incorrect focus management or improper role usage.</p>
-			                    <p>Visual ARIA is meant to address the global problem that ARIA is an invisible technology, making it extremely difficult for mainstream sighted developers to understand and implement properly with consistent reliability.</p>
-			                    <p>For example, when developers who implement ARIA receive no direct input to validate their efforts during the process of development, and who have little to no understanding of how Assistive Technologies work, they have no way to assess the value of what they are doing, nor is there any way for them to learn from their mistakes at the same time. This is the primary reason why the vast majority of mainstream sighted developers still cannot understand the proper use of ARIA; because there is nothing for them to see.</p>
-			                    <p>Visual ARIA solves this problem by providing direct visual feedback for sighted engineers during the agile development process. The source code for Visual ARIA is included within the <a target="_blank" href="https://github.com/accdc/aria-matrices">ARIA Role Conformance Matrices</a> GitHub project as core mapping algorithms, which can be downloaded for offline usage or behind corporate firewalls.</p>
-			                    <p>Please file relevant bugs on <a target="_blank" href="https://github.com/accdc/aria-matrices">The ARIA Role Conformance Matrices GitHub project page</a> if issues are discovered.</p>
-			                    <p>Sincerely,<a id="mlto" href="#" target="_blank">Bryan Garaventa</a></p>
-							</div>
-						</div>
-	                </section>
-	            </aside>
-			
-			</div> <!-- /wrapper -->
-			
-	        <footer>
-				<p class="copyright">&copy;<script type="text/javascript">document.write(new Date().getFullYear());</script> WhatSock. All rights reserved.</p>
-	        </footer>
-        </div>
-    </body>
+            </main>
+
+            <aside>
+                <section class="intro heading">
+                    <h3 class="nopermalink">Related resources:</h3>
+                    <div class="content">
+                        <ul>
+                            <li><a href="http://whatsock.com/training">The Accessibility Tree - A Training Guide for Advanced Web Development</a></li>
+                            <li><a href="http://whatsock.com/training/matrices">The ARIA Role Conformance Matrices </a></li>
+                        </ul>
+                        <div class="notes">
+                            <p>Visual ARIA is a cascading logic program written using CSS, which allows any sighted person to physically see the use of ARIA upon any public website, including all landmark and region roles, structural roles, live regions, pseudo interactive constructs, and all interactive widget roles mapped within ARIA 1.1.</p>
+                            <p>Moreover, Visual ARIA provides real-time visual feedback as interactive widgets are focused to and updated, and will also convey when widget roles are not being interacted with properly due to incorrect focus management or improper role usage.</p>
+                            <p>Visual ARIA is meant to address the global problem that ARIA is an invisible technology, making it extremely difficult for mainstream sighted developers to understand and implement properly with consistent reliability.</p>
+                            <p>For example, when developers who implement ARIA receive no direct input to validate their efforts during the process of development, and who have little to no understanding of how Assistive Technologies work, they have no way to assess the value of what they are doing, nor is there any way for them to learn from their mistakes at the same time. This is the primary reason why the vast majority of mainstream sighted developers still cannot understand the proper use of ARIA; because there is nothing for them to see.</p>
+                            <p>Visual ARIA solves this problem by providing direct visual feedback for sighted engineers during the agile development process. The source code for Visual ARIA is included within the <a target="_blank" href="https://github.com/accdc/aria-matrices">ARIA Role Conformance Matrices</a> GitHub project as core mapping algorithms, which can be downloaded for offline usage or behind corporate firewalls.</p>
+                            <p>Please file relevant bugs on <a target="_blank" href="https://github.com/accdc/aria-matrices">The ARIA Role Conformance Matrices GitHub project page</a> if issues are discovered.</p>
+                            <p>Sincerely,<a id="mlto" href="#" target="_blank">Bryan Garaventa</a></p>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+        </div> <!-- /wrapper -->
+
+        <footer>
+            <p class="copyright">&copy;<script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                </script> WhatSock. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
 </html>
