@@ -12,13 +12,13 @@ Distributed under the terms of the Open Source Initiative OSI - MIT License.
 Developed and maintained by: Bryan Garaventa https://www.linkedin.com/in/bgaraventa
 Or on Twitter at https://twitter.com/bryanegaraventa
 
-Note: All visual design by Angela Ricci (web designer and web front-end developer). You can check her work at her personal site http://gericci.me/
+Note: All visual design by Angela Ricci (web designer and web front-end developer). You can check her work at her personal site https://gericci.me/
 Or you can follow her on Twitter at https://twitter.com/gericci
 
 Project home:
 -----
 
-http://whatsock.com/training/matrices
+https://whatsock.com/training/matrices
 
 Related projects:
 -----
