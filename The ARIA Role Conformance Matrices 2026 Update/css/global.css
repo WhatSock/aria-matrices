@@ -1,0 +1,47 @@
+/* WhatSock — updated ARIA Role Conformance Matrices, October 2026. System fonts only. */
+:root{color-scheme:light;--ink:#22353b;--ink-dark:#123238;--teal:#14585a;--gold:#e2a037;--outline:#273e48;--line:#c1d4d6;--paper:#fff;--soft:#eef5f5;--link:#084d83}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#123639;color:var(--ink);font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:var(--link);text-underline-offset:.14em}a:hover{text-decoration-thickness:.15em}a:focus-visible,summary:focus-visible{outline:3px solid #d18811;outline-offset:4px;background:#fff5d8;color:#12242b}h1,h2,h3,h4{line-height:1.25}h2,h3,h4{scroll-margin-top:1rem}h1{font-size:clamp(1.8rem,4vw,3.25rem);margin:0;color:#fff}h2{font-size:1.7rem;margin:2.3rem 0 .65rem}h3{font-size:1.35rem;margin:2rem 0 .6rem}h4{font-size:1.15rem;margin:1.7rem 0 .5rem}p{margin:.6rem 0 1rem}li{margin:.25rem 0}code{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:.94em;overflow-wrap:anywhere}.site-shell{max-width:1560px;margin:auto;background:var(--paper);min-height:100vh}.skip-link{position:absolute;top:-200px;left:1rem;z-index:3;padding:.65rem 1rem;background:#fff;color:#0c3956}.skip-link:focus{top:.75rem}.site-header{padding:1.6rem clamp(1rem,3vw,3rem);background:#123639;color:#fff;border-bottom:.45rem solid var(--gold)}.site-brand img{width:120px;max-height:64px;object-fit:contain}.header-title p{margin:.65rem 0 1.3rem;color:#d9eef2;font-weight:600}.primary-nav{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;list-style:none;margin:0;padding:0}.primary-nav a{display:inline-block;color:#fff;font-weight:650;padding:.25rem 0}.primary-nav a:focus-visible{color:#12242b}.layout{display:grid;grid-template-columns:minmax(15rem,19rem) minmax(0,1fr);align-items:start}.sidebar{padding:1.25rem 1.4rem 2rem;background:var(--soft);border-right:1px solid var(--line);align-self:stretch}.sidebar h2{font-size:1.42rem;margin-top:.5rem}.sidebar h3{font-size:1.15rem}.sidebar ul{padding-left:1.3rem}main{min-width:0;padding:1.25rem clamp(1rem,2.3vw,2.8rem) 3rem}.toc{border:1px solid #9baeb2;background:#f6fafb;border-radius:.35rem;margin:1.4rem 0 2rem;padding:.8rem 1.2rem}.toc summary{font-weight:700;cursor:pointer;padding:.2rem 0}.toc-list{columns:3;column-gap:1.6rem;margin:1.2rem 0 .4rem;padding-left:1.4rem}.toc-list li{break-inside:avoid;padding:.05rem 0}.role-section{border-bottom:1px solid var(--line);padding-bottom:1.1rem}.role-purpose{max-width:75ch}.section-note{background:#f2f8f7;padding:.7rem 1rem;border-left:4px solid var(--teal)}.permalink{font-size:.84rem;text-decoration:none;color:#276d75;margin-left:.4rem}.permalink:focus-visible{color:#123238}.matrix-wrap{overflow-x:auto;overscroll-behavior-x:contain;margin:1rem 0 0;border:1px solid #acc4c5;border-radius:.3rem}.matrix{width:100%;border-collapse:collapse;min-width:60rem;font-size:.925rem;line-height:1.45}.matrix caption{caption-side:top;text-align:left;padding:.65rem .85rem;background:#edf4f5;font-weight:700}.matrix th,.matrix td{border-top:1px solid #cedde0;border-right:1px solid #d9e5e7;padding:.7rem .75rem;vertical-align:top}.matrix th:last-child,.matrix td:last-child{border-right:0}.matrix thead th{background:#184e56;color:#fff;font-weight:700;text-align:left;border-color:#557e83}.matrix tbody th{width:13%;min-width:7.5rem;text-align:left;background:#f2f8f8}.matrix tbody tr:nth-child(2n) td{background:#f6f9fa}.matrix tbody tr.related-row th{background:#e9f2f3}.matrix tbody td:nth-child(2){width:16%}.matrix tbody td:nth-child(3){width:25%}.matrix tbody td:nth-child(4){width:14%}.matrix tbody td:nth-child(5){width:32%}.matrix td ul{padding-left:1.1rem;margin:0}.matrix td li{margin:0}.none-required{font-style:italic;color:#3c5761}.row-type{display:block;font-weight:normal;font-size:.78rem;color:#4a6a70;margin-top:.2rem}.role-resources{font-size:.9rem;margin:.65rem 0 1.25rem}.sources{margin-top:2.5rem;padding-top:1rem;border-top:3px solid var(--teal)}.sources ul{padding-left:1.4rem}.site-footer{padding:1.5rem 2.3rem;background:#123639;color:#fff}.site-footer a{color:#ffe1a0}a code{color:inherit}@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{border:0;border-bottom:1px solid var(--line);padding:1rem 1.25rem}.toc-list{columns:2}.site-header{padding:1.25rem}main{padding:1.25rem}}@media(max-width:520px){.toc-list{columns:1}.primary-nav{display:block}.primary-nav li{display:inline-block;margin-right:.7rem}.matrix{min-width:48rem}}@media print{body{background:#fff}.site-header{color:#000;background:#fff}.header-title h1{color:#000}.header-title p{color:#000}.primary-nav,.toc,.permalink,.site-footer,.skip-link{display:none}.layout{display:block}.sidebar{border:1px solid #bbb}.matrix-wrap{overflow:visible;border:none}.matrix{min-width:0;font-size:.75rem}.matrix th,.matrix td{padding:.35rem}.matrix thead th{color:#000;background:#ececec}.role-section{break-inside:avoid}.site-shell{max-width:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Implementation Notes use native, keyboard-operable disclosure controls. */
+.matrix { min-width: 64rem; }
+.matrix-wrap:focus-visible { outline: 3px solid #d18811; outline-offset: 3px; }
+.matrix tbody td:nth-child(2) { width: 14%; }
+.matrix tbody td:nth-child(3) { width: 21%; }
+.matrix tbody td:nth-child(4) { width: 12%; }
+.matrix tbody td:nth-child(5) { width: 43%; }
+.matrix .implementation-notes p { margin: .35rem 0 .75rem; }
+.matrix .implementation-notes ul { padding-left: 1.25rem; margin: .35rem 0 1rem; }
+.matrix .implementation-notes li { margin: .35rem 0; }
+.matrix .implementation-notes a { overflow-wrap: anywhere; }
+.matrix .implementation-preserved { border-top: 1px solid #b9d0d3; padding-top: .55rem; margin-top: .7rem; }
+.matrix .notes-subheading { font-weight: 700; margin-top: .1rem; }
+.matrix .standards-clarification { background: #f0f5f5; padding: .65rem .8rem; border-left: 3px solid #14585a; }
+.matrix .standards-clarification p { margin: .25rem 0 .55rem; }
+.matrix .note-correction { padding: .3rem 0; }
+
+.resource-links { border-top: 1px solid #c1d4d6; margin-top: 1.5rem; padding-top: .65rem; }
+@media (max-width: 520px) { .matrix { min-width: 58rem; } }
+@media print { .matrix { min-width: 0; font-size: .73rem; } }
+
+/* Compact notes column; each disclosure is closed until a visitor opens it. */
+.matrix .implementation-notes { min-width: 12rem; }
+.matrix .notes-toggle { border: 1px solid #9eb8ba; border-radius: .35rem; background: #fff; }
+.matrix .notes-toggle > summary { cursor: pointer; padding: .58rem .65rem; font-weight: 650; color: #113e56; line-height: 1.4; }
+.matrix .notes-toggle > summary:hover { background: #eaf4f4; }
+.matrix .notes-toggle > summary:focus-visible { outline: 3px solid #d18811; outline-offset: 3px; color: #102d38; }
+.matrix .notes-toggle[open] > summary { border-bottom: 1px solid #b9d0d3; background: #eef6f6; }
+.matrix .notes-open-label { display: none; }
+.matrix .notes-toggle[open] .notes-open-label { display: inline; }
+.matrix .notes-toggle[open] .notes-closed-label { display: none; }
+.matrix .notes-detail-body { padding: .55rem .7rem .75rem; }
+.matrix .notes-detail-body .standards-clarification { margin: 0; }
+.matrix .notes-detail-body .implementation-preserved { margin-top: .75rem; }
+@media print {
+  /* Print the text even when the on-screen disclosure is closed (Chromium). */
+  details::details-content { content-visibility: visible !important; }
+  .matrix .notes-toggle { border: none; }
+  .matrix .notes-toggle > summary { display: none; }
+  .matrix .notes-toggle:not([open]) > .notes-detail-body { display: block !important; }
+  .matrix .notes-detail-body { padding: 0; }
+}
